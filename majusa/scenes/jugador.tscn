@@ -1,0 +1,417 @@
+[gd_scene format=3 uid="uid://bkcoaw6ar6t8n"]
+
+[ext_resource type="Script" uid="uid://cjsei507wi8w5" path="res://scripts/jugador.gd" id="1_jugador"]
+[ext_resource type="Texture2D" uid="uid://ck2dkyon1ryeo" path="res://assets/Huntress/Sprites/Attack1.png" id="tex_atacar1"]
+[ext_resource type="Texture2D" uid="uid://yim7txbwj383" path="res://assets/Huntress/Sprites/Attack2.png" id="tex_atacar2"]
+[ext_resource type="Texture2D" uid="uid://chxva7kj3tj8b" path="res://assets/Huntress/Sprites/Attack3.png" id="tex_atacar3"]
+[ext_resource type="Texture2D" uid="uid://bixn0wcc2lv3r" path="res://assets/Huntress/Sprites/Fall.png" id="tex_caer"]
+[ext_resource type="Texture2D" uid="uid://dkl1p7gw0vl8" path="res://assets/Huntress/Sprites/Run.png" id="tex_correr"]
+[ext_resource type="Texture2D" uid="uid://ckla5se0vqn2d" path="res://assets/Huntress/Sprites/Death.png" id="tex_morir"]
+[ext_resource type="Texture2D" uid="uid://cw22j0re8he70" path="res://assets/Huntress/Sprites/Take hit.png" id="tex_recibir_golpe"]
+[ext_resource type="Texture2D" uid="uid://becix7re6kdbg" path="res://assets/Huntress/Sprites/Idle.png" id="tex_reposo"]
+[ext_resource type="Texture2D" uid="uid://dnbdb02708uex" path="res://assets/Huntress/Sprites/Jump.png" id="tex_saltar"]
+
+[sub_resource type="AtlasTexture" id="AT_atacar1_0"]
+atlas = ExtResource("tex_atacar1")
+region = Rect2(0, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AT_atacar1_1"]
+atlas = ExtResource("tex_atacar1")
+region = Rect2(150, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AT_atacar1_2"]
+atlas = ExtResource("tex_atacar1")
+region = Rect2(300, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AT_atacar1_3"]
+atlas = ExtResource("tex_atacar1")
+region = Rect2(450, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AT_atacar1_4"]
+atlas = ExtResource("tex_atacar1")
+region = Rect2(600, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AT_atacar2_0"]
+atlas = ExtResource("tex_atacar2")
+region = Rect2(0, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AT_atacar2_1"]
+atlas = ExtResource("tex_atacar2")
+region = Rect2(150, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AT_atacar2_2"]
+atlas = ExtResource("tex_atacar2")
+region = Rect2(300, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AT_atacar2_3"]
+atlas = ExtResource("tex_atacar2")
+region = Rect2(450, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AT_atacar2_4"]
+atlas = ExtResource("tex_atacar2")
+region = Rect2(600, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AT_atacar3_0"]
+atlas = ExtResource("tex_atacar3")
+region = Rect2(0, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AT_atacar3_1"]
+atlas = ExtResource("tex_atacar3")
+region = Rect2(150, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AT_atacar3_2"]
+atlas = ExtResource("tex_atacar3")
+region = Rect2(300, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AT_atacar3_3"]
+atlas = ExtResource("tex_atacar3")
+region = Rect2(450, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AT_atacar3_4"]
+atlas = ExtResource("tex_atacar3")
+region = Rect2(600, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AT_atacar3_5"]
+atlas = ExtResource("tex_atacar3")
+region = Rect2(750, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AT_atacar3_6"]
+atlas = ExtResource("tex_atacar3")
+region = Rect2(900, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AT_caer_0"]
+atlas = ExtResource("tex_caer")
+region = Rect2(0, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AT_caer_1"]
+atlas = ExtResource("tex_caer")
+region = Rect2(150, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AT_correr_0"]
+atlas = ExtResource("tex_correr")
+region = Rect2(0, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AT_correr_1"]
+atlas = ExtResource("tex_correr")
+region = Rect2(150, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AT_correr_2"]
+atlas = ExtResource("tex_correr")
+region = Rect2(300, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AT_correr_3"]
+atlas = ExtResource("tex_correr")
+region = Rect2(450, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AT_correr_4"]
+atlas = ExtResource("tex_correr")
+region = Rect2(600, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AT_correr_5"]
+atlas = ExtResource("tex_correr")
+region = Rect2(750, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AT_correr_6"]
+atlas = ExtResource("tex_correr")
+region = Rect2(900, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AT_correr_7"]
+atlas = ExtResource("tex_correr")
+region = Rect2(1050, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AT_morir_0"]
+atlas = ExtResource("tex_morir")
+region = Rect2(0, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AT_morir_1"]
+atlas = ExtResource("tex_morir")
+region = Rect2(150, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AT_morir_2"]
+atlas = ExtResource("tex_morir")
+region = Rect2(300, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AT_morir_3"]
+atlas = ExtResource("tex_morir")
+region = Rect2(450, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AT_morir_4"]
+atlas = ExtResource("tex_morir")
+region = Rect2(600, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AT_morir_5"]
+atlas = ExtResource("tex_morir")
+region = Rect2(750, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AT_morir_6"]
+atlas = ExtResource("tex_morir")
+region = Rect2(900, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AT_morir_7"]
+atlas = ExtResource("tex_morir")
+region = Rect2(1050, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AT_recibir_golpe_0"]
+atlas = ExtResource("tex_recibir_golpe")
+region = Rect2(0, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AT_recibir_golpe_1"]
+atlas = ExtResource("tex_recibir_golpe")
+region = Rect2(150, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AT_recibir_golpe_2"]
+atlas = ExtResource("tex_recibir_golpe")
+region = Rect2(300, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AT_reposo_0"]
+atlas = ExtResource("tex_reposo")
+region = Rect2(0, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AT_reposo_1"]
+atlas = ExtResource("tex_reposo")
+region = Rect2(150, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AT_reposo_2"]
+atlas = ExtResource("tex_reposo")
+region = Rect2(300, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AT_reposo_3"]
+atlas = ExtResource("tex_reposo")
+region = Rect2(450, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AT_reposo_4"]
+atlas = ExtResource("tex_reposo")
+region = Rect2(600, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AT_reposo_5"]
+atlas = ExtResource("tex_reposo")
+region = Rect2(750, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AT_reposo_6"]
+atlas = ExtResource("tex_reposo")
+region = Rect2(900, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AT_reposo_7"]
+atlas = ExtResource("tex_reposo")
+region = Rect2(1050, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AT_saltar_0"]
+atlas = ExtResource("tex_saltar")
+region = Rect2(0, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AT_saltar_1"]
+atlas = ExtResource("tex_saltar")
+region = Rect2(150, 0, 150, 150)
+
+[sub_resource type="SpriteFrames" id="SF_main"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AT_atacar1_0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AT_atacar1_1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AT_atacar1_2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AT_atacar1_3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AT_atacar1_4")
+}],
+"loop": false,
+"name": &"atacar1",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AT_atacar2_0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AT_atacar2_1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AT_atacar2_2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AT_atacar2_3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AT_atacar2_4")
+}],
+"loop": false,
+"name": &"atacar2",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AT_atacar3_0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AT_atacar3_1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AT_atacar3_2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AT_atacar3_3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AT_atacar3_4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AT_atacar3_5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AT_atacar3_6")
+}],
+"loop": false,
+"name": &"atacar3",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AT_caer_0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AT_caer_1")
+}],
+"loop": false,
+"name": &"caer",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AT_correr_0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AT_correr_1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AT_correr_2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AT_correr_3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AT_correr_4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AT_correr_5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AT_correr_6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AT_correr_7")
+}],
+"loop": true,
+"name": &"correr",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AT_morir_0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AT_morir_1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AT_morir_2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AT_morir_3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AT_morir_4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AT_morir_5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AT_morir_6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AT_morir_7")
+}],
+"loop": false,
+"name": &"morir",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AT_recibir_golpe_0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AT_recibir_golpe_1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AT_recibir_golpe_2")
+}],
+"loop": false,
+"name": &"recibir_golpe",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AT_reposo_0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AT_reposo_1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AT_reposo_2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AT_reposo_3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AT_reposo_4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AT_reposo_5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AT_reposo_6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AT_reposo_7")
+}],
+"loop": true,
+"name": &"reposo",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AT_saltar_0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AT_saltar_1")
+}],
+"loop": false,
+"name": &"saltar",
+"speed": 8.0
+}]
+
+[sub_resource type="RectangleShape2D" id="SH_cuerpo"]
+size = Vector2(18, 28)
+
+[node name="jugador" type="CharacterBody2D" unique_id=1882298558]
+collision_mask = 4
+script = ExtResource("1_jugador")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=357836271]
+position = Vector2(0.99999714, -0.9999981)
+scale = Vector2(0.65333337, 0.6133334)
+sprite_frames = SubResource("SF_main")
+animation = &"saltar"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1086738407]
+shape = SubResource("SH_cuerpo")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1941658790]
+offset = Vector2(3, 3)
+zoom = Vector2(3, 3)
+position_smoothing_enabled = true
