@@ -51,34 +51,6 @@ region = Rect2(450, 0, 150, 150)
 atlas = ExtResource("tex_atacar2")
 region = Rect2(600, 0, 150, 150)
 
-[sub_resource type="AtlasTexture" id="AT_atacar3_0"]
-atlas = ExtResource("tex_atacar3")
-region = Rect2(0, 0, 150, 150)
-
-[sub_resource type="AtlasTexture" id="AT_atacar3_1"]
-atlas = ExtResource("tex_atacar3")
-region = Rect2(150, 0, 150, 150)
-
-[sub_resource type="AtlasTexture" id="AT_atacar3_2"]
-atlas = ExtResource("tex_atacar3")
-region = Rect2(300, 0, 150, 150)
-
-[sub_resource type="AtlasTexture" id="AT_atacar3_3"]
-atlas = ExtResource("tex_atacar3")
-region = Rect2(450, 0, 150, 150)
-
-[sub_resource type="AtlasTexture" id="AT_atacar3_4"]
-atlas = ExtResource("tex_atacar3")
-region = Rect2(600, 0, 150, 150)
-
-[sub_resource type="AtlasTexture" id="AT_atacar3_5"]
-atlas = ExtResource("tex_atacar3")
-region = Rect2(750, 0, 150, 150)
-
-[sub_resource type="AtlasTexture" id="AT_atacar3_6"]
-atlas = ExtResource("tex_atacar3")
-region = Rect2(900, 0, 150, 150)
-
 [sub_resource type="AtlasTexture" id="AT_caer_0"]
 atlas = ExtResource("tex_caer")
 region = Rect2(0, 0, 150, 150)
@@ -118,6 +90,34 @@ region = Rect2(900, 0, 150, 150)
 [sub_resource type="AtlasTexture" id="AT_correr_7"]
 atlas = ExtResource("tex_correr")
 region = Rect2(1050, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AT_atacar3_0"]
+atlas = ExtResource("tex_atacar3")
+region = Rect2(0, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AT_atacar3_1"]
+atlas = ExtResource("tex_atacar3")
+region = Rect2(150, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AT_atacar3_2"]
+atlas = ExtResource("tex_atacar3")
+region = Rect2(300, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AT_atacar3_3"]
+atlas = ExtResource("tex_atacar3")
+region = Rect2(450, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AT_atacar3_4"]
+atlas = ExtResource("tex_atacar3")
+region = Rect2(600, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AT_atacar3_5"]
+atlas = ExtResource("tex_atacar3")
+region = Rect2(750, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AT_atacar3_6"]
+atlas = ExtResource("tex_atacar3")
+region = Rect2(900, 0, 150, 150)
 
 [sub_resource type="AtlasTexture" id="AT_morir_0"]
 atlas = ExtResource("tex_morir")
@@ -247,32 +247,6 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AT_atacar3_0")
-}, {
-"duration": 1.0,
-"texture": SubResource("AT_atacar3_1")
-}, {
-"duration": 1.0,
-"texture": SubResource("AT_atacar3_2")
-}, {
-"duration": 1.0,
-"texture": SubResource("AT_atacar3_3")
-}, {
-"duration": 1.0,
-"texture": SubResource("AT_atacar3_4")
-}, {
-"duration": 1.0,
-"texture": SubResource("AT_atacar3_5")
-}, {
-"duration": 1.0,
-"texture": SubResource("AT_atacar3_6")
-}],
-"loop": false,
-"name": &"atacar3",
-"speed": 12.0
-}, {
-"frames": [{
-"duration": 1.0,
 "texture": SubResource("AT_caer_0")
 }, {
 "duration": 1.0,
@@ -310,6 +284,32 @@ animations = [{
 "loop": true,
 "name": &"correr",
 "speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AT_atacar3_0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AT_atacar3_1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AT_atacar3_2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AT_atacar3_3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AT_atacar3_4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AT_atacar3_5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AT_atacar3_6")
+}],
+"loop": false,
+"name": &"lanza",
+"speed": 12.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -407,7 +407,7 @@ script = ExtResource("1_jugador")
 position = Vector2(0.99999714, -0.9999981)
 scale = Vector2(0.65333337, 0.6133334)
 sprite_frames = SubResource("SF_main")
-animation = &"atacar3"
+animation = &"lanza"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1086738407]
 shape = SubResource("SH_cuerpo")
