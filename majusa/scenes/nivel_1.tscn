@@ -1,40 +1,8 @@
 [gd_scene format=3 uid="uid://d3pxiksax25d8"]
 
 [ext_resource type="PackedScene" uid="uid://bkcoaw6ar6t8n" path="res://scenes/jugador.tscn" id="1_birf2"]
-[ext_resource type="Texture2D" uid="uid://bj5a2o5ypte1g" path="res://icon.svg" id="2_gwvgh"]
-
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_5hr2l"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_gq86h"]
-size = Vector2(128, 12)
 
 [node name="nivel1" type="Node2D" unique_id=23561539]
 
 [node name="jugador" parent="." unique_id=1882298558 instance=ExtResource("1_birf2")]
-position = Vector2(58, 49)
-
-[node name="plataforma" type="StaticBody2D" parent="." unique_id=508537923]
-position = Vector2(58, 163)
-collision_mask = 0
-physics_material_override = SubResource("PhysicsMaterial_5hr2l")
-
-[node name="Sprite2D" type="Sprite2D" parent="plataforma" unique_id=308236660]
-scale = Vector2(1, 0.09375)
-texture = ExtResource("2_gwvgh")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="plataforma" unique_id=1586192553]
-shape = SubResource("RectangleShape2D_gq86h")
-
-[node name="plataforma2" type="StaticBody2D" parent="." unique_id=374554038]
-position = Vector2(58, 163)
-collision_mask = 0
-physics_material_override = SubResource("PhysicsMaterial_5hr2l")
-
-[node name="Sprite2D" type="Sprite2D" parent="plataforma2" unique_id=576967652]
-position = Vector2(126, -52)
-scale = Vector2(1, 0.09375)
-texture = ExtResource("2_gwvgh")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="plataforma2" unique_id=2700740]
-position = Vector2(124, -52)
-shape = SubResource("RectangleShape2D_gq86h")
+position = Vector2(-1, 136)

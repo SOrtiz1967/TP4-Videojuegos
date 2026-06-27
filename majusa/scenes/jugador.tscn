@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bkcoaw6ar6t8n"]
 
 [ext_resource type="Script" uid="uid://cjsei507wi8w5" path="res://scripts/jugador.gd" id="1_jugador"]
+[ext_resource type="PackedScene" uid="uid://d13140ct8mnu6" path="res://scenes/lanza.tscn" id="2_auomn"]
 [ext_resource type="Texture2D" uid="uid://ck2dkyon1ryeo" path="res://assets/Huntress/Sprites/Attack1.png" id="tex_atacar1"]
 [ext_resource type="Texture2D" uid="uid://yim7txbwj383" path="res://assets/Huntress/Sprites/Attack2.png" id="tex_atacar2"]
 [ext_resource type="Texture2D" uid="uid://chxva7kj3tj8b" path="res://assets/Huntress/Sprites/Attack3.png" id="tex_atacar3"]
@@ -402,6 +403,7 @@ size = Vector2(18, 28)
 collision_layer = 2
 collision_mask = 5
 script = ExtResource("1_jugador")
+escena_lanza = ExtResource("2_auomn")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=357836271]
 position = Vector2(0.99999714, -0.9999981)

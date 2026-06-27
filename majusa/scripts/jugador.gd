@@ -9,6 +9,10 @@ signal vida_cambiada(nueva_vida: int)
 @export var fuerza_salto: float= -400.0
 @export var daño: int= 10
 
+@export var velocidad_base: float= 150.0
+@export var fuerza_empujon: float= 400.0
+@export var friccion: float= 900.0
+
 @onready var animacion= $AnimatedSprite2D
 @onready var vidas: int= vida_maxima
 
@@ -26,25 +30,22 @@ func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity.y+= gravedad * delta
 	if atacando or recibiendo_golpe:
-		velocity.x= move_toward(velocity.x, 0, velocidad)
+		velocity.x= move_toward(velocity.x, 0, friccion * delta)
 		move_and_slide()
 		return
-	var direccion= Input.get_axis("izquierda", "derecha")
-	if direccion==0:
-		velocity.x=move_toward(velocity.x, 0, velocidad)
-		if is_on_floor():
-			actualizar_animacion("reposo")
+		
+	velocity.x= move_toward(velocity.x, velocidad_base, friccion * delta)
+	
+	if velocity.x >= 0:
+		ultima_dir="derecha"
+		animacion.flip_h=false
 	else:
-		velocity.x=direccion * velocidad
-		if direccion > 0:
-			ultima_dir="derecha"
-			animacion.flip_h=false
-		else:
-			ultima_dir="izquierda"
-			animacion.flip_h=true
-		if is_on_floor():
-			actualizar_animacion("correr")
-	if not is_on_floor():
+		ultima_dir="izquierda"
+		animacion.flip_h=true
+		
+	if is_on_floor():
+		actualizar_animacion("correr")
+	else:
 		if velocity.y < 0:
 			actualizar_animacion("saltar")
 		else:
@@ -55,13 +56,25 @@ func _physics_process(delta: float) -> void:
 func _input(event: InputEvent) -> void:
 	if animacion.animation == "morir" or recibiendo_golpe:
 		return
+	if event.is_action_pressed("derecha") and not atacando:
+		velocity.x= fuerza_empujon
+	if event.is_action_pressed("izquierda") and not atacando:
+		velocity.x= -fuerza_empujon
 	if event.is_action_pressed("saltar") and is_on_floor() and not atacando:
 		velocity.y = fuerza_salto
+	if event.is_action_pressed("abajo") and is_on_floor() and not atacando:
+		bajar_plataforma()
 	if event.is_action_pressed("atacar") and not atacando:
 		ataque_normal()
 	if event.is_action_pressed("atacar_lanza") and not atacando:
 		ataque_lanza()
 
+func bajar_plataforma() -> void:
+	
+	set_collision_mask_value(1, false)
+	await get_tree().create_timer(0.4).timeout
+	#atravesar plataformas
+	set_collision_mask_value(1, true)
 func ataque_normal() -> void:
 	atacando=true
 	velocity =Vector2.ZERO 
@@ -76,12 +89,25 @@ func ataque_normal() -> void:
 func ataque_lanza() -> void:
 	atacando=true
 	velocity=Vector2.ZERO
-
 	animacion.play("lanza")
-
-
-	#logica de tiraflechaa mismo que secanucas
-	await animacion.animation_finished
+	#sincornizar la animacion con la lanza
+	await get_tree().create_timer(0.55).timeout
+	if escena_lanza:
+		var lanza_instancia= escena_lanza.instantiate()
+		
+		lanza_instancia.global_position= global_position + Vector2(0, -10)
+		lanza_instancia.daño= daño
+		
+		if ultima_dir == "derecha":
+			lanza_instancia.direccion= Vector2(1, 0)
+			lanza_instancia.rotation_degrees= 0
+		else:
+			lanza_instancia.direccion= Vector2(-1, 0)
+			lanza_instancia.rotation_degrees= 180
+			
+		get_parent().add_child(lanza_instancia)
+	if animacion.is_playing() and animacion.animation == "lanza":
+		await animacion.animation_finished
 	atacando = false
 
 func recibir_daño(daño_recibido: int) -> void:
