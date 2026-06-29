@@ -1,40 +1,73 @@
 [gd_scene format=3 uid="uid://d3pxiksax25d8"]
 
 [ext_resource type="PackedScene" uid="uid://bkcoaw6ar6t8n" path="res://scenes/jugador.tscn" id="1_birf2"]
-[ext_resource type="Texture2D" uid="uid://bj5a2o5ypte1g" path="res://icon.svg" id="2_gwvgh"]
+[ext_resource type="PackedScene" uid="uid://7kci5ld5fipy" path="res://scenes/mapa/ui/menu_pausa.tscn" id="1_gwvgh"]
+[ext_resource type="Texture2D" uid="uid://bj5a2o5ypte1g" path="res://icon.svg" id="3_gwvgh"]
+[ext_resource type="PackedScene" uid="uid://d8p47txj8fxi" path="res://scenes/mapa/estructuras/edificio_bajo1.tscn" id="4_hrsa5"]
+[ext_resource type="PackedScene" uid="uid://bfiqb5gf6gj3p" path="res://scenes/mapa/estructuras/edificio_bajo2.tscn" id="5_0pjdr"]
+[ext_resource type="PackedScene" uid="uid://c6elmin7phfgx" path="res://scenes/mapa/estructuras/edifico_medio1.tscn" id="6_67o6f"]
 
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_5hr2l"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_birf2"]
+size = Vector2(881, 152)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_gq86h"]
-size = Vector2(128, 12)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gwvgh"]
+size = Vector2(1265, 166)
 
-[node name="nivel1" type="Node2D" unique_id=23561539]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5hr2l"]
+size = Vector2(3580, 193)
+
+[node name="nivel1" type="Area2D" unique_id=720028765]
+
+[node name="menu_pausa" parent="." unique_id=1012924372 instance=ExtResource("1_gwvgh")]
+visible = false
 
 [node name="jugador" parent="." unique_id=1882298558 instance=ExtResource("1_birf2")]
-position = Vector2(58, 49)
+position = Vector2(82, 608)
+collision_mask = 7
 
-[node name="plataforma" type="StaticBody2D" parent="." unique_id=508537923]
-position = Vector2(58, 163)
-collision_mask = 0
-physics_material_override = SubResource("PhysicsMaterial_5hr2l")
+[node name="piso1" type="StaticBody2D" parent="." unique_id=33786677]
 
-[node name="Sprite2D" type="Sprite2D" parent="plataforma" unique_id=308236660]
-scale = Vector2(1, 0.09375)
-texture = ExtResource("2_gwvgh")
+[node name="Sprite2D" type="Sprite2D" parent="piso1" unique_id=95264700]
+position = Vector2(435.5, 719.5)
+scale = Vector2(7.0234375, 1.1796875)
+texture = ExtResource("3_gwvgh")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="plataforma" unique_id=1586192553]
-shape = SubResource("RectangleShape2D_gq86h")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="piso1" unique_id=1511304230]
+position = Vector2(441, 721)
+shape = SubResource("RectangleShape2D_birf2")
 
-[node name="plataforma2" type="StaticBody2D" parent="." unique_id=374554038]
-position = Vector2(58, 163)
-collision_mask = 0
-physics_material_override = SubResource("PhysicsMaterial_5hr2l")
+[node name="piso2" type="StaticBody2D" parent="." unique_id=521207212]
 
-[node name="Sprite2D" type="Sprite2D" parent="plataforma2" unique_id=576967652]
-position = Vector2(126, -52)
-scale = Vector2(1, 0.09375)
-texture = ExtResource("2_gwvgh")
+[node name="Sprite2D" type="Sprite2D" parent="piso2" unique_id=778318803]
+position = Vector2(1682.75, 720)
+scale = Vector2(9.847655, 1.1796875)
+texture = ExtResource("3_gwvgh")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="plataforma2" unique_id=2700740]
-position = Vector2(124, -52)
-shape = SubResource("RectangleShape2D_gq86h")
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="piso2" unique_id=1099767168]
+position = Vector2(1685, 729)
+shape = SubResource("RectangleShape2D_gwvgh")
+
+[node name="piso3" type="StaticBody2D" parent="." unique_id=508749024]
+collision_layer = 7
+collision_mask = 7
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="piso3" unique_id=1238923479]
+position = Vector2(4340, 735)
+shape = SubResource("RectangleShape2D_5hr2l")
+
+[node name="Sprite2D" type="Sprite2D" parent="piso3" unique_id=362796389]
+position = Vector2(4010, 720)
+scale = Vector2(22.839842, 1.246094)
+texture = ExtResource("3_gwvgh")
+
+[node name="EdificioBajo1" parent="." unique_id=961256580 instance=ExtResource("4_hrsa5")]
+position = Vector2(3016, 594)
+
+[node name="EdificioBajo2" parent="." unique_id=308080541 instance=ExtResource("5_0pjdr")]
+position = Vector2(3367, 595)
+
+[node name="StaticBody2D" parent="." unique_id=248324224 instance=ExtResource("6_67o6f")]
+position = Vector2(3190, 576)
+
+[node name="EdificioBajo3" parent="." unique_id=1159788749 instance=ExtResource("4_hrsa5")]
+position = Vector2(366, 605)

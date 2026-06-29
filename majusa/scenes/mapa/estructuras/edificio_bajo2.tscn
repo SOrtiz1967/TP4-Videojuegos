@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://bfiqb5gf6gj3p"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gux1n"]
+size = Vector2(161, 9)
+
+[node name="EdificioBajo2" type="StaticBody2D" unique_id=961256580]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1168917483]
+position = Vector2(-9.499993, 0)
+scale = Vector2(0.15559895, 0.16796876)
+
+[node name="colision_techo" type="CollisionShape2D" parent="." unique_id=976985734]
+position = Vector2(-9.5, -21.5)
+shape = SubResource("RectangleShape2D_gux1n")
+one_way_collision = true

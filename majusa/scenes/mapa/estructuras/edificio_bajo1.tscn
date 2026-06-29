@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://d8p47txj8fxi"]
+
+[ext_resource type="Texture2D" uid="uid://b4kmit020oaw7" path="res://assets/fondo/estructuras/edificio_bajo.png" id="1_e6rt3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gux1n"]
+size = Vector2(174, 9)
+
+[node name="EdificioBajo1" type="StaticBody2D" unique_id=961256580]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1168917483]
+scale = Vector2(0.16796874, 0.16796876)
+texture = ExtResource("1_e6rt3")
+
+[node name="colision_techo" type="CollisionShape2D" parent="." unique_id=976985734]
+position = Vector2(0, -22)
+shape = SubResource("RectangleShape2D_gux1n")
+one_way_collision = true

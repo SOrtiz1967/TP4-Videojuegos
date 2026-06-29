@@ -399,13 +399,12 @@ animations = [{
 size = Vector2(18, 28)
 
 [node name="jugador" type="CharacterBody2D" unique_id=1882298558]
-collision_layer = 2
 collision_mask = 5
 script = ExtResource("1_jugador")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=357836271]
-position = Vector2(0.99999714, -0.9999981)
-scale = Vector2(0.65333337, 0.6133334)
+position = Vector2(-3, -8.000002)
+scale = Vector2(0.84666663, 0.9800001)
 sprite_frames = SubResource("SF_main")
 animation = &"atacar3"
 

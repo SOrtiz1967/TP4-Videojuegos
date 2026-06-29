@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://c6elmin7phfgx"]
+
+[ext_resource type="Texture2D" uid="uid://bxsn6g6lyms0l" path="res://assets/fondo/estructuras/edificio_medio.png" id="1_goqmc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tybxu"]
+size = Vector2(176, 8)
+
+[node name="StaticBody2D" type="StaticBody2D" unique_id=248324224]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1449655527]
+position = Vector2(-1.9374962, -2)
+scale = Vector2(0.17049153, 0.19824217)
+texture = ExtResource("1_goqmc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=365562497]
+position = Vector2(-2, -57)
+shape = SubResource("RectangleShape2D_tybxu")
