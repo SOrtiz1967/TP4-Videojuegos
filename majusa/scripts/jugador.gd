@@ -1,126 +1,128 @@
 extends CharacterBody2D
+class_name JugadorBase
 
-@export var velocidad: float = 200.0
-@export var fuerza_salto: float = -400.0
+signal vida_cambiada(nueva_vida: int)
 
-var gravedad = ProjectSettings.get_setting("physics/2d/default_gravity")
-@onready var sprite = $AnimatedSprite2D
+@export var escena_lanza: PackedScene
+@export var vida_maxima: int= 5
+@export var velocidad: float= 200.0
+@export var fuerza_salto: float= -400.0
+@export var daño: int= 10
 
-enum Estado{
-	REPOSO,
-	CORRER,
-	AIRE,
-	ATACAR,
-	RECIBIR_GOLPE,
-	MORIR
-}#manteca
+@export var velocidad_base: float= 150.0
+@export var fuerza_empujon: float= 400.0
+@export var friccion: float= 900.0
 
-var estado_actual: Estado=Estado.REPOSO
-var combo_ataque: int=1 
+@onready var animacion= $AnimatedSprite2D
+@onready var vidas: int= vida_maxima
+
+var gravedad= ProjectSettings.get_setting("physics/2d/default_gravity")
+var ultima_dir= "derecha"
+var atacando: bool= false
+var recibiendo_golpe: bool= false
 
 func _ready() -> void:
-	sprite.animation_finished.connect(_on_animated_sprite_2d_animation_finished)
+	add_to_group("jugadores")
 
 func _physics_process(delta: float) -> void:
-	if estado_actual != Estado.MORIR and not is_on_floor():
-		velocity.y+=gravedad * delta
-
-	match estado_actual:
-		Estado.REPOSO:
-			estado_reposo()
-		Estado.CORRER:
-			estado_correr()
-		Estado.AIRE:
-			estado_aire()
-		Estado.ATACAR:
-			estado_atacar()
-		Estado.RECIBIR_GOLPE:
-			estado_recibir_golpe()
-		Estado.MORIR:
-			estado_morir()
+	if animacion.animation == "morir":
+		return
+	if not is_on_floor():
+		velocity.y+= gravedad * delta
+	if atacando or recibiendo_golpe:
+		velocity.x= move_toward(velocity.x, 0, friccion * delta)
+		move_and_slide()
+		return
+		
+	velocity.x= move_toward(velocity.x, velocidad_base, friccion * delta)
+	
+	if velocity.x >= 0:
+		ultima_dir="derecha"
+		animacion.flip_h=false
+	else:
+		ultima_dir="izquierda"
+		animacion.flip_h=true
+		
+	if is_on_floor():
+		actualizar_animacion("correr")
+	else:
+		if velocity.y < 0:
+			actualizar_animacion("saltar")
+		else:
+			actualizar_animacion("caer")
 
 	move_and_slide()
 
-# estados
+func _input(event: InputEvent) -> void:
+	if animacion.animation == "morir" or recibiendo_golpe:
+		return
+	if event.is_action_pressed("derecha") and not atacando:
+		velocity.x= fuerza_empujon
+	if event.is_action_pressed("izquierda") and not atacando:
+		velocity.x= -fuerza_empujon
+	if event.is_action_pressed("saltar") and is_on_floor() and not atacando:
+		velocity.y = fuerza_salto
+	if event.is_action_pressed("abajo") and is_on_floor() and not atacando:
+		bajar_plataforma()
+	if event.is_action_pressed("atacar") and not atacando:
+		ataque_normal()
+	if event.is_action_pressed("atacar_lanza") and not atacando:
+		ataque_lanza()
 
-func estado_reposo():
-	sprite.play("reposo")
-	velocity.x=move_toward(velocity.x, 0, velocidad)
-
-	if not is_on_floor():
-		estado_actual=Estado.AIRE
-	elif Input.is_action_just_pressed("saltar"):
-		ejecutar_salto()
-	elif Input.is_action_just_pressed("atacar"):
-		iniciar_ataque()
-	elif Input.get_axis("izquierda", "derecha") != 0:
-		estado_actual=Estado.CORRER
-
-func estado_correr():
-	sprite.play("correr")
-	var direccion=Input.get_axis("izquierda", "derecha")
-
-	if direccion!=0:
-		velocity.x=direccion * velocidad
-		sprite.flip_h=(direccion < 0)
-	else:
-		estado_actual=Estado.REPOSO
-
-	if not is_on_floor():
-		estado_actual=Estado.AIRE
-	elif Input.is_action_just_pressed("saltar"):
-		ejecutar_salto()
-	elif Input.is_action_just_pressed("atacar"):
-		iniciar_ataque()
-
-func estado_aire():
-	if velocity.y < 0:
-		sprite.play("saltar")
-	else:
-		sprite.play("caer")
-
-	var direccion = Input.get_axis("izquierda", "derecha")
+func bajar_plataforma() -> void:
 	
-	if direccion != 0:
-		velocity.x=direccion * velocidad
-		sprite.flip_h=(direccion < 0)
-	else:
-		velocity.x=move_toward(velocity.x, 0, velocidad)
+	set_collision_mask_value(1, false)
+	await get_tree().create_timer(0.4).timeout
+	#atravesar plataformas
+	set_collision_mask_value(1, true)
+func ataque_normal() -> void:
+	atacando=true
+	velocity =Vector2.ZERO 
+	
+	animacion.play("atacar1")
+	
+	#logica de ataque piña
+	
+	await animacion.animation_finished
+	atacando=false
 
-	if is_on_floor():
-		if direccion!= 0:
-			estado_actual =Estado.CORRER
-		else:
-			estado_actual= Estado.REPOSO
-
-func iniciar_ataque():
-	estado_actual= Estado.ATACAR
-	sprite.play("atacar" + str(combo_ataque))
-
-func estado_atacar():
-	velocity.x =move_toward(velocity.x, 0, velocidad)
-
-func estado_recibir_golpe():
-	sprite.play("recibir_golpe")
-	velocity.x=move_toward(velocity.x, 0, velocidad)
-
-func estado_morir():
-	sprite.play("morir")
-	velocity.x = move_toward(velocity.x, 0, velocidad)
-
-func ejecutar_salto():
-	velocity.y=fuerza_salto
-	estado_actual= Estado.AIRE
-
-# señales mantecosas
-
-func _on_animated_sprite_2d_animation_finished() -> void:
-	if estado_actual == Estado.ATACAR:
-		combo_ataque+=1
-		if combo_ataque>3:
-			combo_ataque= 1 
-			
-		estado_actual= Estado.REPOSO
+func ataque_lanza() -> void:
+	atacando=true
+	velocity=Vector2.ZERO
+	animacion.play("lanza")
+	#sincornizar la animacion con la lanza
+	await get_tree().create_timer(0.55).timeout
+	if escena_lanza:
+		var lanza_instancia= escena_lanza.instantiate()
 		
-	elif estado_actual == Estado.RECIBIR_GOLPE:
-		estado_actual = Estado.REPOSO
+		lanza_instancia.global_position= global_position + Vector2(0, -10)
+		lanza_instancia.daño= daño
+		
+		if ultima_dir == "derecha":
+			lanza_instancia.direccion= Vector2(1, 0)
+			lanza_instancia.rotation_degrees= 0
+		else:
+			lanza_instancia.direccion= Vector2(-1, 0)
+			lanza_instancia.rotation_degrees= 180
+			
+		get_parent().add_child(lanza_instancia)
+	if animacion.is_playing() and animacion.animation == "lanza":
+		await animacion.animation_finished
+	atacando = false
+
+func recibir_daño(daño_recibido: int) -> void:
+	if animacion.animation=="morir":
+		return
+	vidas-=daño_recibido
+	vida_cambiada.emit(vidas)
+	if vidas <= 0:
+		animacion.play("morir")
+		print("mantecoño")
+	else:
+		recibiendo_golpe=true
+		animacion.play("recibir_golpe")
+		await animacion.animation_finished
+		recibiendo_golpe=false
+
+func actualizar_animacion(estado: String) -> void:
+	animacion.play(estado)
