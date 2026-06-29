@@ -10,4 +10,6 @@ El juego en desarrollo es un juego de acción en el que siempre estás corriendo
 Va a haber distintos obstáculos y enemigos que te van a dificultar llegar al final. 
 
 ## La idea del proyecto
-La idea es mezclar cosas de distintos juegos que ya hicimos e ir un pasito más allá con cosas que ninguno de los tres conoce bien y principalmente que nos resulte entretenido de jugar y desaarrollar
+La idea es mezclar cosas de distintos juegos que ya hicimos e ir un pasito más allá con cosas que ninguno de los tres conoce bien y principalmente que nos resulte entretenido de jugar y desaarrollar.
+## Aclaraciones importantes
+las contribuciones de el usuario joacogonz corresponden a juanpibaquero y las de benjamingaelserrano a SOrtiz. esto paso por usuarios en compus del colegio 
