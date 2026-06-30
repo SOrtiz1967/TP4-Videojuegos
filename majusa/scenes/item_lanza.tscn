@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://l21ckdjcis7e"]
+
+[ext_resource type="Script" uid="uid://btmed64ybxhw8" path="res://scripts/item_lanza.gd" id="1_n40w1"]
+[ext_resource type="PackedScene" uid="uid://d13140ct8mnu6" path="res://scenes/lanza.tscn" id="2_1qd2t"]
+[ext_resource type="Texture2D" uid="uid://o2r2lyofa0mx" path="res://assets/Huntress/Sprites/Spear.png" id="2_nmkoa"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1qd2t"]
+size = Vector2(43, 16)
+
+[node name="itemLanza" type="Area2D" unique_id=906148642]
+collision_layer = 8
+collision_mask = 2
+script = ExtResource("1_n40w1")
+item = ExtResource("2_1qd2t")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=786751849]
+texture = ExtResource("2_nmkoa")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1924373839]
+position = Vector2(1.5, 0)
+shape = SubResource("RectangleShape2D_1qd2t")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

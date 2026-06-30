@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://d3pxiksax25d8"]
 
+[ext_resource type="PackedScene" uid="uid://l21ckdjcis7e" path="res://scenes/item_lanza.tscn" id="1_0pjdr"]
+[ext_resource type="PackedScene" uid="uid://dgb7r0grccc7k" path="res://scenes/item_armor.tscn" id="1_67o6f"]
 [ext_resource type="PackedScene" uid="uid://bkcoaw6ar6t8n" path="res://scenes/jugador.tscn" id="1_birf2"]
 [ext_resource type="PackedScene" uid="uid://7kci5ld5fipy" path="res://scenes/mapa/ui/menu_pausa.tscn" id="1_gwvgh"]
 [ext_resource type="Texture2D" uid="uid://bj5a2o5ypte1g" path="res://icon.svg" id="3_gwvgh"]
@@ -17,6 +19,12 @@ size = Vector2(1265, 166)
 size = Vector2(3580, 193)
 
 [node name="nivel1" type="Area2D" unique_id=720028765]
+
+[node name="itemArmor" parent="." unique_id=906148642 instance=ExtResource("1_67o6f")]
+position = Vector2(1962, 619)
+
+[node name="itemLanza" parent="." unique_id=581375144 instance=ExtResource("1_0pjdr")]
+position = Vector2(718, 625)
 
 [node name="menu_pausa" parent="." unique_id=1012924372 instance=ExtResource("1_gwvgh")]
 visible = false
@@ -52,11 +60,11 @@ collision_layer = 7
 collision_mask = 7
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="piso3" unique_id=1238923479]
-position = Vector2(4340, 735)
+position = Vector2(4312, 735)
 shape = SubResource("RectangleShape2D_5hr2l")
 
 [node name="Sprite2D" type="Sprite2D" parent="piso3" unique_id=362796389]
-position = Vector2(4010, 720)
+position = Vector2(3987, 720.00006)
 scale = Vector2(22.839842, 1.246094)
 texture = ExtResource("3_gwvgh")
 

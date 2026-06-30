@@ -2,20 +2,21 @@ extends CharacterBody2D
 class_name JugadorBase
 
 signal vida_cambiada(nueva_vida: int)
-
+@export var velocidad_acelerada: float= 250.0
 @export var escena_lanza: PackedScene
 @export var vida_maxima: int= 5
 @export var velocidad: float= 200.0
 @export var fuerza_salto: float= -400.0
 @export var daño: int= 10
-
+@export var max_saltos: int= 1
+var saltos_actuales: int= 0
 @export var velocidad_base: float= 150.0
 @export var fuerza_empujon: float= 400.0
 @export var friccion: float= 900.0
 
 @onready var animacion= $AnimatedSprite2D
 @onready var vidas: int= vida_maxima
-
+var tiene_lanza: bool = false
 var gravedad= ProjectSettings.get_setting("physics/2d/default_gravity")
 var ultima_dir= "derecha"
 var atacando: bool= false
@@ -25,6 +26,28 @@ func _ready() -> void:
 	add_to_group("jugadores")
 
 func _physics_process(delta: float) -> void:
+	
+	if atacando or recibiendo_golpe:
+		velocity.x=move_toward(velocity.x, 0, friccion * delta)
+		move_and_slide()
+		return
+	var velocidad_objetivo = velocidad_base
+	if is_on_floor():
+		if Input.is_action_pressed("derecha"):
+			velocidad_objetivo = velocidad_acelerada
+	else:
+		if velocity.x > velocidad_base:
+			velocidad_objetivo=velocity.x
+	velocity.x=move_toward(velocity.x, velocidad_objetivo, friccion * delta)
+	
+	if is_on_floor():
+		saltos_actuales= 0
+		actualizar_animacion("correr")
+	else:
+		if velocity.y < 0:
+			actualizar_animacion("saltar")
+		else:
+			actualizar_animacion("caer")
 	if animacion.animation == "morir":
 		return
 	if not is_on_floor():
@@ -33,7 +56,6 @@ func _physics_process(delta: float) -> void:
 		velocity.x= move_toward(velocity.x, 0, friccion * delta)
 		move_and_slide()
 		return
-		
 	velocity.x= move_toward(velocity.x, velocidad_base, friccion * delta)
 	
 	if velocity.x >= 0:
@@ -42,26 +64,26 @@ func _physics_process(delta: float) -> void:
 	else:
 		ultima_dir="izquierda"
 		animacion.flip_h=true
-		
-	if is_on_floor():
-		actualizar_animacion("correr")
-	else:
-		if velocity.y < 0:
-			actualizar_animacion("saltar")
-		else:
-			actualizar_animacion("caer")
-
 	move_and_slide()
 
 func _input(event: InputEvent) -> void:
 	if animacion.animation == "morir" or recibiendo_golpe:
 		return
-	if event.is_action_pressed("derecha") and not atacando:
-		velocity.x= fuerza_empujon
 	if event.is_action_pressed("izquierda") and not atacando:
-		velocity.x= -fuerza_empujon
-	if event.is_action_pressed("saltar") and is_on_floor() and not atacando:
-		velocity.y = fuerza_salto
+		velocity.x = -fuerza_empujon
+	if event.is_action_pressed("derecha") and not atacando:
+		velocity.x = velocidad_acelerada
+	if event.is_action_released("derecha") and not atacando:
+		velocity.x = velocidad_base
+	
+	if event.is_action_pressed("saltar") and not atacando:
+		if is_on_floor():
+			velocity.y = fuerza_salto
+			saltos_actuales = 1
+		elif saltos_actuales < max_saltos:
+			velocity.y = fuerza_salto
+			saltos_actuales += 1
+			animacion.play("saltar")
 	if event.is_action_pressed("abajo") and is_on_floor() and not atacando:
 		bajar_plataforma()
 	if event.is_action_pressed("atacar") and not atacando:
@@ -76,6 +98,8 @@ func bajar_plataforma() -> void:
 	#atravesar plataformas
 	set_collision_mask_value(1, true)
 func ataque_normal() -> void:
+	if not tiene_lanza:
+		return
 	atacando=true
 	velocity =Vector2.ZERO 
 	
@@ -87,6 +111,8 @@ func ataque_normal() -> void:
 	atacando=false
 
 func ataque_lanza() -> void:
+	if not tiene_lanza:
+		return
 	atacando=true
 	velocity=Vector2.ZERO
 	animacion.play("lanza")
@@ -126,3 +152,7 @@ func recibir_daño(daño_recibido: int) -> void:
 
 func actualizar_animacion(estado: String) -> void:
 	animacion.play(estado)
+
+func equipar(lanza_recibida: PackedScene) -> void:
+	tiene_lanza=true#el item es escalable para que poder crear lanzas distintas, habria que instansciarlas ascaa para cambiar el comportmamiento
+	print("lanza enmantecada y pronta para pinchar")

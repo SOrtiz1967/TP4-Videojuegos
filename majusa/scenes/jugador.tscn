@@ -286,6 +286,11 @@ animations = [{
 "name": &"correr",
 "speed": 8.0
 }, {
+"frames": [],
+"loop": true,
+"name": &"corrersinlanza",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AT_atacar3_0")
@@ -400,15 +405,17 @@ animations = [{
 size = Vector2(18, 28)
 
 [node name="jugador" type="CharacterBody2D" unique_id=1882298558]
-collision_mask = 5
+collision_layer = 2
 script = ExtResource("1_jugador")
 escena_lanza = ExtResource("2_auomn")
+velocidad_base = 190.0
+friccion = 660.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=357836271]
 position = Vector2(-3, -8.000002)
 scale = Vector2(0.84666663, 0.9800001)
 sprite_frames = SubResource("SF_main")
-animation = &"lanza"
+animation = &"corrersinlanza"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1086738407]
 shape = SubResource("SH_cuerpo")

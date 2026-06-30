@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://dgb7r0grccc7k"]
+
+[ext_resource type="Script" uid="uid://btmed64ybxhw8" path="res://scripts/item_lanza.gd" id="1_yk0qf"]
+[ext_resource type="Texture2D" uid="uid://brivsfpc7c2so" path="res://assets/Pixel Art Icon Pack - RPG/Equipment/Iron Armor.png" id="2_yk0qf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1qd2t"]
+size = Vector2(29, 29)
+
+[node name="itemArmor" type="Area2D" unique_id=906148642]
+collision_layer = 8
+collision_mask = 2
+script = ExtResource("1_yk0qf")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=786751849]
+texture = ExtResource("2_yk0qf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1924373839]
+position = Vector2(-0.5, 0.5)
+shape = SubResource("RectangleShape2D_1qd2t")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
