@@ -4,7 +4,7 @@ class_name JugadorBase
 signal vida_cambiada(nueva_vida: int)
 @export var velocidad_acelerada: float= 250.0
 @export var escena_lanza: PackedScene
-@export var vida_maxima: int= 5
+
 @export var velocidad: float= 200.0
 @export var fuerza_salto: float= -400.0
 @export var daño: int= 10
@@ -21,6 +21,10 @@ var gravedad= ProjectSettings.get_setting("physics/2d/default_gravity")
 var ultima_dir= "derecha"
 var atacando: bool= false
 var recibiendo_golpe: bool= false
+var vida_maxima: int = 3
+var vida_actual: int = 1
+ 
+
 
 func _ready() -> void:
 	add_to_group("jugadores")
@@ -156,3 +160,7 @@ func actualizar_animacion(estado: String) -> void:
 func equipar(lanza_recibida: PackedScene) -> void:
 	tiene_lanza=true#el item es escalable para que poder crear lanzas distintas, habria que instansciarlas ascaa para cambiar el comportmamiento
 	print("lanza enmantecada y pronta para pinchar")
+func curar(cantidad: int) -> void:
+	vida_actual += cantidad
+	vida_actual = min(vida_actual, vida_maxima)	
+	print("pickeaste armor amigo, tu vida actual es: ", vida_actual)
