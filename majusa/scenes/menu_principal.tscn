@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://ywit5whw4t3d"]
+
+[ext_resource type="Script" uid="uid://dvy0mh3xscywg" path="res://scripts/menu_principal.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://3pldpias55uq" path="res://assets/fondo/menuPrincipal.png" id="2_mk4g1"]
+
+[node name="menu_principal" type="Control" unique_id=449812220]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 27.0
+offset_top = 19.0
+offset_right = 72.0
+offset_bottom = 19.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1")
+
+[node name="panel" type="TextureRect" parent="." unique_id=391683047]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -602.5
+offset_top = -338.0
+offset_right = 549.5
+offset_bottom = 310.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_mk4g1")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="boton_jugar" type="Button" parent="panel" unique_id=748168561]
+layout_mode = 0
+offset_left = 398.0
+offset_top = 165.0
+offset_right = 759.0
+offset_bottom = 265.0
+text = "Jugar"
+flat = true
+
+[node name="boton_opciones" type="Button" parent="panel" unique_id=658821680]
+layout_mode = 0
+offset_left = 401.0
+offset_top = 302.0
+offset_right = 760.0
+offset_bottom = 412.0
+text = "Opciones"
+flat = true
+
+[node name="boton_salir" type="Button" parent="panel" unique_id=1236511312]
+layout_mode = 0
+offset_left = 398.0
+offset_top = 439.0
+offset_right = 763.0
+offset_bottom = 549.0
+text = "Salir"
+flat = true
+
+[connection signal="pressed" from="panel/boton_jugar" to="." method="_on_boton_jugar_pressed"]
+[connection signal="pressed" from="panel/boton_opciones" to="." method="_on_boton_opciones_pressed"]
+[connection signal="pressed" from="panel/boton_salir" to="." method="_on_boton_salir_pressed"]
