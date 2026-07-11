@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://cgqx4pynwvw1g"]
+
+[ext_resource type="Texture2D" uid="uid://v1vxg5xs5djs" path="res://assets/fondo/estructuras/torre.png" id="1_52ids"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u2bet"]
+size = Vector2(134.5, 6)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_52ids"]
+size = Vector2(107, 7.75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wdn78"]
+size = Vector2(24, 5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tqnqd"]
+size = Vector2(22, 5)
+
+[node name="TorreAlta2" type="StaticBody2D" unique_id=1178134858]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1090421083]
+position = Vector2(-76.00001, -166.875)
+scale = Vector2(0.41536462, 0.3713379)
+texture = ExtResource("1_52ids")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=906608227]
+position = Vector2(-78.25, -64)
+shape = SubResource("RectangleShape2D_u2bet")
+one_way_collision = true
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=1884701668]
+position = Vector2(-77.5, -247.875)
+shape = SubResource("RectangleShape2D_52ids")
+one_way_collision = true
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="." unique_id=485735610]
+position = Vector2(-101, -143.5)
+shape = SubResource("RectangleShape2D_wdn78")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="." unique_id=730022954]
+position = Vector2(-54, -174.5)
+shape = SubResource("RectangleShape2D_tqnqd")

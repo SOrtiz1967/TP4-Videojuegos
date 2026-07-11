@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://bgxe6nyudvpj0"]
+
+[ext_resource type="Texture2D" uid="uid://ss0auu4bleex" path="res://assets/fondo/estructuras/campanario.png" id="1_qi8f7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xypnc"]
+size = Vector2(86, 5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hsoxx"]
+size = Vector2(72, 9)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8jq2s"]
+size = Vector2(7.5, 61.5)
+
+[node name="TorreAlta1" type="StaticBody2D" unique_id=693479237]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2080757151]
+position = Vector2(-67, -128)
+scale = Vector2(0.23763023, 0.27246097)
+texture = ExtResource("1_qi8f7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1229602204]
+position = Vector2(-69, -124.5)
+shape = SubResource("RectangleShape2D_xypnc")
+one_way_collision = true
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=1706221886]
+position = Vector2(-72, -241.5)
+shape = SubResource("RectangleShape2D_hsoxx")
+one_way_collision = true
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="." unique_id=471286831]
+position = Vector2(-65, -32.25)
+shape = SubResource("RectangleShape2D_8jq2s")

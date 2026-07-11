@@ -408,6 +408,7 @@ size = Vector2(18, 28)
 collision_layer = 2
 script = ExtResource("1_jugador")
 escena_lanza = ExtResource("2_auomn")
+velocidad = 100.0
 velocidad_base = 190.0
 friccion = 660.0
 

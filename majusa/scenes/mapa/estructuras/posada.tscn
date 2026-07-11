@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://cdh8nn05q4jc8"]
+
+[ext_resource type="Texture2D" uid="uid://bx83s0lsha32v" path="res://assets/fondo/estructuras/posada.png" id="1_mbgoi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4epyy"]
+size = Vector2(199.5, 6)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_imnfm"]
+size = Vector2(22, 19)
+
+[node name="Posada" type="StaticBody2D" unique_id=202941753]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=384483082]
+position = Vector2(119, -75)
+scale = Vector2(0.22143555, 0.2562256)
+texture = ExtResource("1_mbgoi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=816484007]
+position = Vector2(127.25, -63)
+shape = SubResource("RectangleShape2D_4epyy")
+one_way_collision = true
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=615887578]
+position = Vector2(238, -76.5)
+shape = SubResource("RectangleShape2D_imnfm")

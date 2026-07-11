@@ -3,56 +3,103 @@
 [ext_resource type="PackedScene" uid="uid://l21ckdjcis7e" path="res://scenes/item_lanza.tscn" id="1_0pjdr"]
 [ext_resource type="PackedScene" uid="uid://dgb7r0grccc7k" path="res://scenes/item_armor.tscn" id="1_67o6f"]
 [ext_resource type="PackedScene" uid="uid://bkcoaw6ar6t8n" path="res://scenes/jugador.tscn" id="1_birf2"]
+[ext_resource type="Texture2D" uid="uid://xnqiunlu3o4w" path="res://assets/fondo/fondo4.png" id="1_gnqo2"]
 [ext_resource type="PackedScene" uid="uid://7kci5ld5fipy" path="res://scenes/mapa/ui/menu_pausa.tscn" id="1_gwvgh"]
+[ext_resource type="Texture2D" uid="uid://bhuya8d48574a" path="res://assets/fondo/fondo2.png" id="2_851hy"]
 [ext_resource type="Texture2D" uid="uid://bj5a2o5ypte1g" path="res://icon.svg" id="3_gwvgh"]
-[ext_resource type="PackedScene" uid="uid://d8p47txj8fxi" path="res://scenes/mapa/estructuras/edificio_bajo1.tscn" id="4_hrsa5"]
-[ext_resource type="PackedScene" uid="uid://bfiqb5gf6gj3p" path="res://scenes/mapa/estructuras/edificio_bajo2.tscn" id="5_0pjdr"]
-[ext_resource type="PackedScene" uid="uid://c6elmin7phfgx" path="res://scenes/mapa/estructuras/edifico_medio1.tscn" id="6_67o6f"]
+[ext_resource type="Texture2D" uid="uid://bjekhtgod4pyl" path="res://assets/fondo/fondo1.png" id="3_yc8pd"]
+[ext_resource type="PackedScene" uid="uid://d8p47txj8fxi" path="res://scenes/mapa/estructuras/edificio_bajo1.tscn" id="6_0pjdr"]
+[ext_resource type="PackedScene" uid="uid://bsgd1woxirbs4" path="res://scenes/mapa/estructuras/cuartel.tscn" id="6_gnqo2"]
+[ext_resource type="PackedScene" uid="uid://c6elmin7phfgx" path="res://scenes/mapa/estructuras/edifico_medio1.tscn" id="6_hrsa5"]
+[ext_resource type="PackedScene" uid="uid://cgqx4pynwvw1g" path="res://scenes/mapa/estructuras/torre_alta2.tscn" id="9_vwgcu"]
+[ext_resource type="PackedScene" uid="uid://bgxe6nyudvpj0" path="res://scenes/mapa/estructuras/torre_alta1.tscn" id="10_851hy"]
+[ext_resource type="PackedScene" uid="uid://cppspju46cm2" path="res://scenes/mapa/estructuras/estructura_madera.tscn" id="11_yc8pd"]
+[ext_resource type="PackedScene" uid="uid://b77c4m5pfpnw0" path="res://scenes/mapa/estructuras/taberna.tscn" id="14_qm6nr"]
+[ext_resource type="PackedScene" uid="uid://cdh8nn05q4jc8" path="res://scenes/mapa/estructuras/posada.tscn" id="16_0qj6g"]
+[ext_resource type="PackedScene" uid="uid://stprkjs8w6qg" path="res://scenes/mapa/estructuras/edificio_alto.tscn" id="17_qx8k3"]
+[ext_resource type="PackedScene" path="res://scenes/mapa/estructuras/molino.tscn" id="18_cokvo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qm6nr"]
+size = Vector2(4162, 241)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r6w1h"]
+size = Vector2(5830, 215)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_birf2"]
-size = Vector2(881, 152)
+size = Vector2(1308, 152)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gwvgh"]
-size = Vector2(1265, 166)
+size = Vector2(1020.5, 166)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5hr2l"]
-size = Vector2(3580, 193)
+size = Vector2(3011, 193)
 
 [node name="nivel1" type="Area2D" unique_id=720028765]
 
-[node name="itemArmor" parent="." unique_id=906148642 instance=ExtResource("1_67o6f")]
-position = Vector2(1962, 619)
+[node name="fondo1" type="Sprite2D" parent="." unique_id=1539304318]
+position = Vector2(2095, 378)
+scale = Vector2(3.0112743, 1.0140924)
+texture = ExtResource("1_gnqo2")
 
-[node name="itemLanza" parent="." unique_id=581375144 instance=ExtResource("1_0pjdr")]
-position = Vector2(718, 625)
+[node name="fondo2" type="Sprite2D" parent="." unique_id=300240795]
+position = Vector2(8537.75, 378.75)
+scale = Vector2(4.253382, 1.0163473)
+texture = ExtResource("2_851hy")
+
+[node name="fondo3" type="Sprite2D" parent="." unique_id=643893188]
+position = Vector2(14552.001, 379.00003)
+scale = Vector2(2.5287483, 1.0197294)
+texture = ExtResource("3_yc8pd")
 
 [node name="menu_pausa" parent="." unique_id=1012924372 instance=ExtResource("1_gwvgh")]
 visible = false
 
-[node name="jugador" parent="." unique_id=1882298558 instance=ExtResource("1_birf2")]
-position = Vector2(82, 608)
-collision_mask = 7
+[node name="piso 5" type="StaticBody2D" parent="." unique_id=1629303890]
+
+[node name="Sprite2D" type="Sprite2D" parent="piso 5" unique_id=1777939363]
+position = Vector2(14718.25, 709)
+scale = Vector2(32.386715, 2.0468748)
+texture = ExtResource("3_gwvgh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="piso 5" unique_id=693363518]
+position = Vector2(14279, 724)
+shape = SubResource("RectangleShape2D_qm6nr")
+
+[node name="EdificioBajo1" parent="piso 5" unique_id=961256580 instance=ExtResource("6_0pjdr")]
+position = Vector2(5442, 595)
+
+[node name="piso4" type="StaticBody2D" parent="." unique_id=46953141]
+position = Vector2(6172, -1274)
+
+[node name="Sprite2D" type="Sprite2D" parent="piso4" unique_id=985806699]
+position = Vector2(2641.0005, 2004.75)
+scale = Vector2(45.5, 1.9101563)
+texture = ExtResource("3_gwvgh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="piso4" unique_id=1421368351]
+position = Vector2(2588, 2008)
+shape = SubResource("RectangleShape2D_r6w1h")
 
 [node name="piso1" type="StaticBody2D" parent="." unique_id=33786677]
 
 [node name="Sprite2D" type="Sprite2D" parent="piso1" unique_id=95264700]
-position = Vector2(435.5, 719.5)
-scale = Vector2(7.0234375, 1.1796875)
+position = Vector2(701.75, 720)
+scale = Vector2(7.2382817, 1.1796875)
 texture = ExtResource("3_gwvgh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="piso1" unique_id=1511304230]
-position = Vector2(441, 721)
+position = Vector2(512, 721)
 shape = SubResource("RectangleShape2D_birf2")
 
 [node name="piso2" type="StaticBody2D" parent="." unique_id=521207212]
 
 [node name="Sprite2D" type="Sprite2D" parent="piso2" unique_id=778318803]
-position = Vector2(1682.75, 720)
-scale = Vector2(9.847655, 1.1796875)
+position = Vector2(1804.9999, 720)
+scale = Vector2(7.9375, 1.1796875)
 texture = ExtResource("3_gwvgh")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="piso2" unique_id=1099767168]
-position = Vector2(1685, 729)
+position = Vector2(1807.25, 729)
 shape = SubResource("RectangleShape2D_gwvgh")
 
 [node name="piso3" type="StaticBody2D" parent="." unique_id=508749024]
@@ -60,22 +107,132 @@ collision_layer = 7
 collision_mask = 7
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="piso3" unique_id=1238923479]
-position = Vector2(4312, 735)
+position = Vector2(4027.5, 735)
 shape = SubResource("RectangleShape2D_5hr2l")
 
 [node name="Sprite2D" type="Sprite2D" parent="piso3" unique_id=362796389]
-position = Vector2(3987, 720.00006)
-scale = Vector2(22.839842, 1.246094)
+position = Vector2(4026.5, 731)
+scale = Vector2(23.539064, 1.5000007)
 texture = ExtResource("3_gwvgh")
 
-[node name="EdificioBajo1" parent="." unique_id=961256580 instance=ExtResource("4_hrsa5")]
-position = Vector2(3016, 594)
+[node name="EdificioBajo1" parent="." unique_id=557924843 instance=ExtResource("6_0pjdr")]
+position = Vector2(294, 604)
 
-[node name="EdificioBajo2" parent="." unique_id=308080541 instance=ExtResource("5_0pjdr")]
-position = Vector2(3367, 595)
+[node name="EdificioMedio" parent="." unique_id=248324224 instance=ExtResource("6_hrsa5")]
+position = Vector2(471, 586)
 
-[node name="StaticBody2D" parent="." unique_id=248324224 instance=ExtResource("6_67o6f")]
-position = Vector2(3190, 576)
+[node name="EdificioBajo2" parent="." unique_id=1050518714 instance=ExtResource("6_0pjdr")]
+position = Vector2(644, 604)
 
-[node name="EdificioBajo3" parent="." unique_id=1159788749 instance=ExtResource("4_hrsa5")]
-position = Vector2(366, 605)
+[node name="Cuartel" parent="." unique_id=77124539 instance=ExtResource("6_gnqo2")]
+position = Vector2(1906, 644)
+
+[node name="TorreAlta2" parent="." unique_id=1178134858 instance=ExtResource("9_vwgcu")]
+position = Vector2(2063, 645)
+
+[node name="EdificioBajo3" parent="." unique_id=756555966 instance=ExtResource("6_0pjdr")]
+position = Vector2(2138, 604)
+
+[node name="EstructuraMadera" parent="." unique_id=24983380 instance=ExtResource("11_yc8pd")]
+position = Vector2(3489, 611)
+
+[node name="EdificioBajo4" parent="." unique_id=989250897 instance=ExtResource("6_0pjdr")]
+position = Vector2(2639, 595)
+
+[node name="Taberna" parent="." unique_id=1799353833 instance=ExtResource("14_qm6nr")]
+position = Vector2(3398, 639)
+
+[node name="TorreAlta1" parent="." unique_id=693479237 instance=ExtResource("10_851hy")]
+position = Vector2(3665, 639)
+
+[node name="EdificioBajo5" parent="." unique_id=1536414926 instance=ExtResource("6_0pjdr")]
+position = Vector2(3775, 597)
+
+[node name="EdificioMedio2" parent="." unique_id=264419811 instance=ExtResource("6_hrsa5")]
+position = Vector2(3952, 581)
+
+[node name="EdificioMedio3" parent="." unique_id=1105650384 instance=ExtResource("6_hrsa5")]
+position = Vector2(4306, 581)
+
+[node name="Posada" parent="." unique_id=202941753 instance=ExtResource("16_0qj6g")]
+position = Vector2(4724, 637)
+
+[node name="EstructuraMadera2" parent="." unique_id=2006130781 instance=ExtResource("11_yc8pd")]
+position = Vector2(5024, 613)
+
+[node name="EdificioAlto" parent="." unique_id=1232541929 instance=ExtResource("17_qx8k3")]
+position = Vector2(11647, 498)
+
+[node name="EdificioMedio4" parent="." unique_id=60336297 instance=ExtResource("6_hrsa5")]
+position = Vector2(6006, 567)
+
+[node name="TorreAlta3" parent="." unique_id=2067870205 instance=ExtResource("9_vwgcu")]
+position = Vector2(6234, 627)
+
+[node name="TorreAlta4" parent="." unique_id=876409087 instance=ExtResource("10_851hy")]
+position = Vector2(6398, 627)
+
+[node name="EdificioAlto2" parent="." unique_id=980245675 instance=ExtResource("17_qx8k3")]
+position = Vector2(6520, 506)
+
+[node name="EdificioBajo6" parent="." unique_id=912326870 instance=ExtResource("6_0pjdr")]
+position = Vector2(6694, 583)
+
+[node name="EdificioMedio5" parent="." unique_id=1632131815 instance=ExtResource("6_hrsa5")]
+position = Vector2(7196, 564)
+
+[node name="Molino" parent="." unique_id=913407848 instance=ExtResource("18_cokvo")]
+position = Vector2(7040, 565)
+
+[node name="EdificioAlto3" parent="." unique_id=923948732 instance=ExtResource("17_qx8k3")]
+position = Vector2(7511, 501)
+
+[node name="Posada2" parent="." unique_id=672407444 instance=ExtResource("16_0qj6g")]
+position = Vector2(7631, 622)
+
+[node name="Taberna2" parent="." unique_id=2075849874 instance=ExtResource("14_qm6nr")]
+position = Vector2(8593, 625)
+
+[node name="EstructuraMadera3" parent="." unique_id=634916724 instance=ExtResource("11_yc8pd")]
+position = Vector2(8562, 596)
+
+[node name="Cuartel2" parent="." unique_id=1597002275 instance=ExtResource("6_gnqo2")]
+position = Vector2(9138, 625)
+
+[node name="EdificioBajo7" parent="." unique_id=1317257235 instance=ExtResource("6_0pjdr")]
+position = Vector2(8680, 584)
+
+[node name="TorreAlta5" parent="." unique_id=935713527 instance=ExtResource("9_vwgcu")]
+position = Vector2(9360, 625)
+
+[node name="Posada3" parent="." unique_id=536972486 instance=ExtResource("16_0qj6g")]
+position = Vector2(9370, 623)
+
+[node name="TorreAlta6" parent="." unique_id=1237410050 instance=ExtResource("9_vwgcu")]
+position = Vector2(9822, 628)
+
+[node name="EdificioBajo8" parent="." unique_id=8044512 instance=ExtResource("6_0pjdr")]
+position = Vector2(9899, 587)
+
+[node name="EdificioMedio6" parent="." unique_id=163274011 instance=ExtResource("6_hrsa5")]
+position = Vector2(10076, 569)
+
+[node name="Taberna3" parent="." unique_id=619284427 instance=ExtResource("14_qm6nr")]
+position = Vector2(10488, 626)
+
+[node name="Cuartel3" parent="." unique_id=1330078896 instance=ExtResource("6_gnqo2")]
+position = Vector2(10846, 627)
+
+[node name="EdificioMedio7" parent="." unique_id=1991303631 instance=ExtResource("6_hrsa5")]
+position = Vector2(11371, 561)
+
+[node name="itemArmor" parent="." unique_id=906148642 instance=ExtResource("1_67o6f")]
+position = Vector2(1712, 491)
+
+[node name="itemLanza" parent="." unique_id=581375144 instance=ExtResource("1_0pjdr")]
+position = Vector2(469, 508)
+
+[node name="jugador" parent="." unique_id=1882298558 instance=ExtResource("1_birf2")]
+position = Vector2(9, 630)
+collision_mask = 7
+velocidad = 50.0

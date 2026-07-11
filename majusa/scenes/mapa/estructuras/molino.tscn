@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://bpde6gbyv7hhe"]
+
+[ext_resource type="Texture2D" uid="uid://dsfdexoh5j86q" path="res://assets/fondo/estructuras/molino.png" id="1_x3n62"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wgten"]
+size = Vector2(40, 10)
+
+[node name="Molino" type="StaticBody2D" unique_id=913407848]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=627505041]
+position = Vector2(-8.218754, -80.625)
+scale = Vector2(0.24841309, 0.35424805)
+texture = ExtResource("1_x3n62")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1654153691]
+position = Vector2(26, -4)
+shape = SubResource("RectangleShape2D_wgten")
+one_way_collision = true

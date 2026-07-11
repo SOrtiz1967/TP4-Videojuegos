@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://cppspju46cm2"]
+
+[ext_resource type="Texture2D" uid="uid://cnru81n01afv0" path="res://assets/fondo/estructuras/Estructura_madera.png" id="1_vtilt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t0gnt"]
+size = Vector2(373, 7)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vtilt"]
+size = Vector2(89, 72.75)
+
+[node name="EstructuraMadera" type="StaticBody2D" unique_id=24983380]
+position = Vector2(427, 41)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2077687303]
+position = Vector2(-452.00003, -33)
+scale = Vector2(0.25716144, 0.22753906)
+texture = ExtResource("1_vtilt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=754336371]
+position = Vector2(-451, -38)
+shape = SubResource("RectangleShape2D_t0gnt")
+one_way_collision = true
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=1155299774]
+position = Vector2(-451.5, -78)
+shape = SubResource("RectangleShape2D_vtilt")
