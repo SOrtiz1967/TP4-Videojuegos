@@ -9,15 +9,16 @@
 [ext_resource type="Texture2D" uid="uid://bj5a2o5ypte1g" path="res://icon.svg" id="3_gwvgh"]
 [ext_resource type="Texture2D" uid="uid://bjekhtgod4pyl" path="res://assets/fondo/fondo1.png" id="3_yc8pd"]
 [ext_resource type="PackedScene" uid="uid://d8p47txj8fxi" path="res://scenes/mapa/estructuras/edificio_bajo1.tscn" id="6_0pjdr"]
-[ext_resource type="PackedScene" uid="uid://bsgd1woxirbs4" path="res://scenes/mapa/estructuras/cuartel.tscn" id="6_gnqo2"]
+[ext_resource type="PackedScene" path="res://scenes/mapa/estructuras/cuartel.tscn" id="6_gnqo2"]
 [ext_resource type="PackedScene" uid="uid://c6elmin7phfgx" path="res://scenes/mapa/estructuras/edifico_medio1.tscn" id="6_hrsa5"]
-[ext_resource type="PackedScene" uid="uid://cgqx4pynwvw1g" path="res://scenes/mapa/estructuras/torre_alta2.tscn" id="9_vwgcu"]
-[ext_resource type="PackedScene" uid="uid://bgxe6nyudvpj0" path="res://scenes/mapa/estructuras/torre_alta1.tscn" id="10_851hy"]
-[ext_resource type="PackedScene" uid="uid://cppspju46cm2" path="res://scenes/mapa/estructuras/estructura_madera.tscn" id="11_yc8pd"]
-[ext_resource type="PackedScene" uid="uid://b77c4m5pfpnw0" path="res://scenes/mapa/estructuras/taberna.tscn" id="14_qm6nr"]
-[ext_resource type="PackedScene" uid="uid://cdh8nn05q4jc8" path="res://scenes/mapa/estructuras/posada.tscn" id="16_0qj6g"]
-[ext_resource type="PackedScene" uid="uid://stprkjs8w6qg" path="res://scenes/mapa/estructuras/edificio_alto.tscn" id="17_qx8k3"]
+[ext_resource type="PackedScene" path="res://scenes/mapa/estructuras/torre_alta2.tscn" id="9_vwgcu"]
+[ext_resource type="PackedScene" path="res://scenes/mapa/estructuras/torre_alta1.tscn" id="10_851hy"]
+[ext_resource type="PackedScene" path="res://scenes/mapa/estructuras/estructura_madera.tscn" id="11_yc8pd"]
+[ext_resource type="PackedScene" path="res://scenes/mapa/estructuras/taberna.tscn" id="14_qm6nr"]
+[ext_resource type="PackedScene" path="res://scenes/mapa/estructuras/posada.tscn" id="16_0qj6g"]
+[ext_resource type="PackedScene" path="res://scenes/mapa/estructuras/edificio_alto.tscn" id="17_qx8k3"]
 [ext_resource type="PackedScene" path="res://scenes/mapa/estructuras/molino.tscn" id="18_cokvo"]
+[ext_resource type="Script" uid="uid://dejbmhxrhsilg" path="res://scripts/muerte.gd" id="19_qx8k3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qm6nr"]
 size = Vector2(4162, 241)
@@ -33,6 +34,9 @@ size = Vector2(1020.5, 166)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5hr2l"]
 size = Vector2(3011, 193)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cokvo"]
+size = Vector2(16808.5, 93)
 
 [node name="nivel1" type="Area2D" unique_id=720028765]
 
@@ -236,3 +240,12 @@ position = Vector2(469, 508)
 position = Vector2(9, 630)
 collision_mask = 7
 velocidad = 50.0
+
+[node name="muerte" type="Area2D" parent="." unique_id=1650028125]
+position = Vector2(33, 841)
+collision_mask = 2
+script = ExtResource("19_qx8k3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="muerte" unique_id=687575498]
+position = Vector2(8348.75, -1)
+shape = SubResource("RectangleShape2D_cokvo")

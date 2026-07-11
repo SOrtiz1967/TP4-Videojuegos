@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dgb7r0grccc7k"]
 
-[ext_resource type="Script" uid="uid://dt6dx3k654cms" path="res://item_armor.gd" id="1_yk0qf"]
+[ext_resource type="Script" uid="uid://dt6dx3k654cms" path="res://scripts/item_armor.gd" id="1_yk0qf"]
 [ext_resource type="Texture2D" uid="uid://brivsfpc7c2so" path="res://assets/Pixel Art Icon Pack - RPG/Equipment/Iron Armor.png" id="2_yk0qf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1qd2t"]

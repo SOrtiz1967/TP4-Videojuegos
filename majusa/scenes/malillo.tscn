@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://5wwm1110u7on"]
 
 [ext_resource type="Texture2D" uid="uid://vdyitiw5so8x" path="res://assets/Forest_Monsters_FREE/Mushroom/Mushroom with VFX/Mushroom-Attack.png" id="1_jix1j"]
-[ext_resource type="Script" uid="uid://wxe7xpqwrwvo" path="res://malillo.gd" id="1_xej8o"]
+[ext_resource type="Script" uid="uid://wxe7xpqwrwvo" path="res://scripts/malillo.gd" id="1_xej8o"]
 [ext_resource type="Texture2D" uid="uid://su738hylcwsf" path="res://assets/Forest_Monsters_FREE/Mushroom/Mushroom with VFX/Mushroom-Die.png" id="2_xej8o"]
 [ext_resource type="Texture2D" uid="uid://cysms8brd3h7" path="res://assets/Forest_Monsters_FREE/Mushroom/Mushroom with VFX/Mushroom-Hit.png" id="3_vul3e"]
 [ext_resource type="Texture2D" uid="uid://ddrx4tuia78wl" path="res://assets/Forest_Monsters_FREE/Mushroom/Mushroom with VFX/Mushroom-Idle.png" id="4_jnqko"]

@@ -98,7 +98,7 @@ func _input(event: InputEvent) -> void:
 func bajar_plataforma() -> void:
 	
 	set_collision_mask_value(1, false)
-	await get_tree().create_timer(0.4).timeout
+	await get_tree().create_timer(0.2).timeout
 	#atravesar plataformas
 	set_collision_mask_value(1, true)
 func ataque_normal() -> void:
