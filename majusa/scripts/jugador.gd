@@ -23,7 +23,7 @@ var atacando: bool= false
 var recibiendo_golpe: bool= false
 var vida_maxima: int = 3
 var vida_actual: int = 1
- 
+var monedas_actuales: int= 0
 
 
 func _ready() -> void:
@@ -164,3 +164,8 @@ func curar(cantidad: int) -> void:
 	vida_actual += cantidad
 	vida_actual = min(vida_actual, vida_maxima)	
 	print("pickeaste armor amigo, tu vida actual es: ", vida_actual)
+	
+func recolectar_moneda(valor: int) -> void:
+	monedas_actuales += valor
+	print("pungeaste una moneda rati ", monedas_actuales)
+	
