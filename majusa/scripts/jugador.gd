@@ -16,7 +16,7 @@ var saltos_actuales: int= 0
 
 @onready var animacion= $AnimatedSprite2D
 @onready var vidas: int= vida_maxima
-var tiene_lanza: bool = false
+var municion_lanza: int = 0
 var gravedad= ProjectSettings.get_setting("physics/2d/default_gravity")
 var ultima_dir= "derecha"
 var atacando: bool= false
@@ -95,6 +95,10 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("atacar_lanza") and not atacando:
 		ataque_lanza()
 
+func equipar_lanza(escena_recibida: PackedScene) -> void:
+	municion_lanza += 3 
+	print("lanzas disponibles:", municion_lanza)
+
 func bajar_plataforma() -> void:
 	
 	set_collision_mask_value(1, false)
@@ -102,7 +106,8 @@ func bajar_plataforma() -> void:
 	#atravesar plataformas
 	set_collision_mask_value(1, true)
 func ataque_normal() -> void:
-	if not tiene_lanza:
+	if municion_lanza <= 0:
+		print("no tenes lanza!")
 		return
 	atacando=true
 	velocity =Vector2.ZERO 
@@ -115,10 +120,17 @@ func ataque_normal() -> void:
 	atacando=false
 
 func ataque_lanza() -> void:
-	if not tiene_lanza:
-		return
-	atacando=true
-	velocity=Vector2.ZERO
+	if municion_lanza <= 0:
+		print("no quedan lanzas! Tengo que agarrar otro ítem.")
+		return 
+		
+	# 2. Descontamos una lanza porque estamos por disparar
+	municion_lanza -= 1
+	print("¡Fiumba! Lanzas restantes: ", municion_lanza)
+	
+	atacando = true
+	velocity = Vector2.ZERO
+	
 	animacion.play("lanza")
 	#sincornizar la animacion con la lanza
 	await get_tree().create_timer(0.55).timeout
@@ -157,9 +169,7 @@ func recibir_daño(daño_recibido: int) -> void:
 func actualizar_animacion(estado: String) -> void:
 	animacion.play(estado)
 
-func equipar(lanza_recibida: PackedScene) -> void:
-	tiene_lanza=true#el item es escalable para que poder crear lanzas distintas, habria que instansciarlas ascaa para cambiar el comportmamiento
-	print("lanza enmantecada y pronta para pinchar")
+
 func curar(cantidad: int) -> void:
 	vida_actual += cantidad
 	vida_actual = min(vida_actual, vida_maxima)	

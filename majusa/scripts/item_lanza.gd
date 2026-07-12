@@ -3,6 +3,7 @@ extends Area2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	body_entered.connect(_on_body_entered)
 	#chiche
 	var tween=create_tween().set_loops()
 	tween.tween_property(self, "position:y", position.y - 5, 1.0).set_trans(Tween.TRANS_SINE)
@@ -14,5 +15,6 @@ func _process(delta: float) -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	if body is JugadorBase:
-		body.equipar(item)
-		queue_free()
+		if body.has_method("equipar_lanza"):
+			body.equipar_lanza(item)
+			queue_free()
