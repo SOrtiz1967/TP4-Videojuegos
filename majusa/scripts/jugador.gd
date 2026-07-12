@@ -1,6 +1,8 @@
 extends CharacterBody2D
 class_name JugadorBase
 
+signal lanzas_cambiadas(cantidad: int)
+signal monedas_cambiadas(cantidad: int)
 signal vida_cambiada(nueva_vida: int)
 @export var velocidad_acelerada: float= 250.0
 @export var escena_lanza: PackedScene
@@ -97,6 +99,7 @@ func _input(event: InputEvent) -> void:
 
 func equipar_lanza(escena_recibida: PackedScene) -> void:
 	municion_lanza += 3 
+	lanzas_cambiadas.emit(municion_lanza)
 	print("lanzas disponibles:", municion_lanza)
 
 func bajar_plataforma() -> void:
@@ -126,6 +129,7 @@ func ataque_lanza() -> void:
 		
 	# 2. Descontamos una lanza porque estamos por disparar
 	municion_lanza -= 1
+	lanzas_cambiadas.emit(municion_lanza)
 	print("¡Fiumba! Lanzas restantes: ", municion_lanza)
 	
 	atacando = true
@@ -171,11 +175,13 @@ func actualizar_animacion(estado: String) -> void:
 
 
 func curar(cantidad: int) -> void:
-	vida_actual += cantidad
-	vida_actual = min(vida_actual, vida_maxima)	
-	print("pickeaste armor amigo, tu vida actual es: ", vida_actual)
+	vidas += cantidad
+	vidas = min(vidas, vida_maxima)	
+	print("Pickeaste armor amigo, tu vida actual es: ", vidas)
+	vida_cambiada.emit(vidas) #pasasrlea al huf
 	
 func recolectar_moneda(valor: int) -> void:
 	monedas_actuales += valor
+	monedas_cambiadas.emit(monedas_actuales)
 	print("pungeaste una moneda rati ", monedas_actuales)
 	

@@ -20,6 +20,7 @@
 [ext_resource type="PackedScene" path="res://scenes/mapa/estructuras/molino.tscn" id="18_cokvo"]
 [ext_resource type="PackedScene" uid="uid://k7nin8y0a02m" path="res://scenes/item_moneda.tscn" id="19_cokvo"]
 [ext_resource type="Script" uid="uid://dejbmhxrhsilg" path="res://scripts/muerte.gd" id="19_qx8k3"]
+[ext_resource type="PackedScene" uid="uid://blc22oq0b324t" path="res://scenes/hud.tscn" id="21_5ruck"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qm6nr"]
 size = Vector2(4162, 241)
@@ -261,3 +262,5 @@ script = ExtResource("19_qx8k3")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="muerte" unique_id=687575498]
 position = Vector2(8406, 30)
 shape = SubResource("RectangleShape2D_cokvo")
+
+[node name="HUD" parent="." unique_id=485234555 instance=ExtResource("21_5ruck")]
