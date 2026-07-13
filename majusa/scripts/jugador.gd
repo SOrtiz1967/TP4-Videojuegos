@@ -7,12 +7,12 @@ signal vida_cambiada(nueva_vida: int)
 @export var velocidad_acelerada: float= 250.0
 @export var escena_lanza: PackedScene
 
-@export var velocidad: float= 200.0
+@export var velocidad: float= 150.0
 @export var fuerza_salto: float= -400.0
 @export var daño: int= 10
 @export var max_saltos: int= 1
 var saltos_actuales: int= 0
-@export var velocidad_base: float= 150.0
+@export var velocidad_base: float= 100.0
 @export var fuerza_empujon: float= 400.0
 @export var friccion: float= 900.0
 @export var velocidad_deslizamiento: float= 260.0
@@ -23,18 +23,19 @@ var saltos_actuales: int= 0
 @onready var animacion= $AnimatedSprite2D
 @onready var forma_colision= $CollisionShape2D
 @onready var zona_golpe= $ZonaGolpe
-@onready var vidas: int= vida_maxima
+@onready var vidas: int= vida_actual
 var municion_lanza: int = 0
 var gravedad= ProjectSettings.get_setting("physics/2d/default_gravity")
 var ultima_dir= "derecha"
 var atacando: bool= false
 var recibiendo_golpe: bool= false
-var vida_maxima: int = 3
+var vida_maxima: int = 5
 var vida_actual: int = 1
 var monedas_actuales: int= 0
 var deslizando: bool= false
 var altura_colision_original: float= 0.0
-
+@export var tiempo_cooldown_empuje: float = 1.5
+var puede_empujar: bool = true
 
 func _ready() -> void:
 	add_to_group("jugadores")
@@ -93,8 +94,13 @@ func _physics_process(delta: float) -> void:
 func _input(event: InputEvent) -> void:
 	if animacion.animation == "morir" or recibiendo_golpe:
 		return
-	if event.is_action_pressed("izquierda") and not atacando:
+	if event.is_action_pressed("izquierda") and not atacando and puede_empujar:
 		velocity.x = -fuerza_empujon
+		puede_empujar = false
+		print("recargando empuje...")
+		await get_tree().create_timer(tiempo_cooldown_empuje).timeout
+		puede_empujar = true
+		print("empuje ready")
 	if event.is_action_pressed("derecha") and not atacando:
 		velocity.x = velocidad_acelerada
 	if event.is_action_released("derecha") and not atacando:
@@ -141,6 +147,9 @@ func bajar_plataforma() -> void:
 	#atravesar plataformas
 	set_collision_mask_value(1, true)
 func ataque_normal() -> void:
+	if municion_lanza <= 0:
+		print("no hay lanzas")
+		return
 	atacando=true
 	velocity =Vector2.ZERO
 	if ultima_dir == "izquierda":
@@ -162,7 +171,7 @@ func ataque_lanza() -> void:
 		print("no quedan lanzas! Tengo que agarrar otro ítem.")
 		return 
 		
-	# 2. Descontamos una lanza porque estamos por disparar
+	
 	municion_lanza -= 1
 	lanzas_cambiadas.emit(municion_lanza)
 	print("¡Fiumba! Lanzas restantes: ", municion_lanza)
@@ -226,3 +235,7 @@ func rebotar_en_enemigo() -> void:
 	velocity.y = -800
 	saltos_actuales = 1 
 	print("voinki")
+
+func habilitar_doble_salto() -> void:
+	max_saltos = 1
+	print("doble salto!")

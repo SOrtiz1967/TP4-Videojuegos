@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://dtoesw6shets"]
+
+[ext_resource type="Texture2D" uid="uid://crwnu4tnhkako" path="res://assets/nube.png" id="1_rca51"]
+[ext_resource type="Script" uid="uid://d1w0gpm3bfrwi" path="res://scripts/item_salto.gd" id="1_tkmcq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tkmcq"]
+size = Vector2(57, 17)
+
+[node name="ItemSalto" type="Area2D" unique_id=914731822]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_tkmcq")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=857090688]
+position = Vector2(0, 1.9073486e-06)
+scale = Vector2(0.175, 0.13200001)
+texture = ExtResource("1_rca51")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=941572504]
+position = Vector2(0.5, -1.5)
+shape = SubResource("RectangleShape2D_tkmcq")

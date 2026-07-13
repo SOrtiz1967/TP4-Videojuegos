@@ -411,7 +411,6 @@ size = Vector2(24, 26)
 collision_layer = 2
 script = ExtResource("1_jugador")
 escena_lanza = ExtResource("2_auomn")
-velocidad = 100.0
 velocidad_base = 190.0
 friccion = 660.0
 
@@ -429,11 +428,11 @@ offset = Vector2(3, 3)
 zoom = Vector2(3, 3)
 position_smoothing_enabled = true
 
-[node name="ZonaGolpe" type="Area2D" parent="." unique_id=1612533675]
+[node name="ZonaGolpe" type="Area2D" parent="." unique_id=270605791]
 collision_layer = 0
 collision_mask = 4
 monitoring = false
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ZonaGolpe" unique_id=280097676]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ZonaGolpe" unique_id=1544914156]
 position = Vector2(16, -2)
 shape = SubResource("SH_golpe")
