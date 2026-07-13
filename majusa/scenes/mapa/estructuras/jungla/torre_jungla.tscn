@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://cxtk8y3jmiyx1"]
+
+[ext_resource type="Texture2D" uid="uid://ddewh7srgfhdd" path="res://assets/fondo/estructuras/jungla/torre_jungla.png" id="1_16f5y"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dejrw"]
+size = Vector2(99, 7)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cu46m"]
+size = Vector2(142, 7)
+
+[node name="TorreJungla" type="StaticBody2D" unique_id=2012515869]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1727932788]
+position = Vector2(-2.000001, -46.249992)
+scale = Vector2(0.31762698, 0.24055988)
+texture = ExtResource("1_16f5y")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=859251450]
+position = Vector2(2, -160.5)
+shape = SubResource("RectangleShape2D_dejrw")
+one_way_collision = true
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=413262825]
+position = Vector2(1, 54.5)
+shape = SubResource("RectangleShape2D_cu46m")
+one_way_collision = true

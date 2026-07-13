@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://cwovcr6k2vpnb"]
+
+[ext_resource type="Texture2D" uid="uid://bjynndcye1c7y" path="res://assets/fondo/estructuras/jungla/edificio_medio_jungla.png" id="1_vlrge"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f4o25"]
+size = Vector2(170, 5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iwqyi"]
+size = Vector2(175, 5)
+
+[node name="EdificioMedioJungla" type="StaticBody2D" unique_id=578395392]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1397603993]
+position = Vector2(0, -0.9999999)
+scale = Vector2(0.20621747, 0.17871094)
+texture = ExtResource("1_vlrge")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=507322554]
+position = Vector2(5, -1.5)
+shape = SubResource("RectangleShape2D_f4o25")
+one_way_collision = true
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=1647360941]
+position = Vector2(4.5, -54.5)
+shape = SubResource("RectangleShape2D_iwqyi")
+one_way_collision = true

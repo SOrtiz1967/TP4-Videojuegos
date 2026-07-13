@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://bptcwtyxjiqkk"]
+
+[ext_resource type="Texture2D" uid="uid://bq77nn7obwb2" path="res://assets/fondo/estructuras/jungla/casa_plataforma.png" id="1_65b1e"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xjx4q"]
+size = Vector2(192, 18)
+
+[node name="CasaPlataforma" type="StaticBody2D" unique_id=408637709]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1006978563]
+position = Vector2(0.99999976, -87.00001)
+scale = Vector2(0.25390625, 0.2721354)
+texture = ExtResource("1_65b1e")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2061638361]
+position = Vector2(2, -163)
+shape = SubResource("RectangleShape2D_xjx4q")
+one_way_collision = true
