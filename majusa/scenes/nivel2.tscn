@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://dapyqp5vtfoh8" path="res://scenes/mapa/estructuras/jungla/palacio_jungla.tscn" id="12_puna5"]
 [ext_resource type="PackedScene" uid="uid://ci8fy8qpsfdqx" path="res://scenes/mapa/estructuras/jungla/templo_jungla.tscn" id="13_omw2a"]
 [ext_resource type="PackedScene" uid="uid://bkcoaw6ar6t8n" path="res://scenes/jugador.tscn" id="14_8tsa1"]
+[ext_resource type="Script" uid="uid://dejbmhxrhsilg" path="res://scripts/muerte.gd" id="15_5uo66"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o5303"]
 size = Vector2(630, 77)
@@ -29,6 +30,9 @@ size = Vector2(3104, 90)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lc7oj"]
 size = Vector2(5879.5, 121)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8xhro"]
+size = Vector2(17031.25, 93)
 
 [node name="Nivel2" type="Area2D" unique_id=929041879]
 
@@ -151,7 +155,7 @@ position = Vector2(1219, 459)
 position = Vector2(820, 527)
 
 [node name="EdificioMedioJungla3" parent="." unique_id=1483900677 instance=ExtResource("8_4bhft")]
-position = Vector2(978, 511)
+position = Vector2(991, 512)
 
 [node name="PalacioJungla2" parent="." unique_id=1940267315 instance=ExtResource("12_puna5")]
 position = Vector2(5814, 490)
@@ -188,4 +192,12 @@ position = Vector2(7605, 542)
 
 [node name="jugador" parent="." unique_id=1882298558 instance=ExtResource("14_8tsa1")]
 position = Vector2(48, 554)
-velocidad_acelerada = 50.0
+
+[node name="muerte" type="Area2D" parent="." unique_id=323002474]
+position = Vector2(-1, 844)
+collision_mask = 2
+script = ExtResource("15_5uo66")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="muerte" unique_id=2039745501]
+position = Vector2(8318, -146)
+shape = SubResource("RectangleShape2D_8xhro")
