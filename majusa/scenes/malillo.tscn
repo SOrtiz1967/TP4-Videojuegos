@@ -483,20 +483,23 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tio5s"]
-size = Vector2(17, 17)
+size = Vector2(17, 25.5)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dkfsn"]
-radius = 16.03122
+radius = 18.027756
 
 [node name="malillo" type="CharacterBody2D" unique_id=1275816925]
+collision_layer = 4
 script = ExtResource("1_xej8o")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=920375504]
+position = Vector2(11, -6.25)
+scale = Vector2(1.275, 1.3378378)
 sprite_frames = SubResource("SpriteFrames_6snpe")
 animation = &"attack"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1010661726]
-position = Vector2(-1.5, 9.5)
+position = Vector2(11, 5.75)
 shape = SubResource("RectangleShape2D_tio5s")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=925764958]
@@ -504,4 +507,5 @@ collision_layer = 4
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1954910360]
+position = Vector2(11, -6)
 shape = SubResource("CircleShape2D_dkfsn")
