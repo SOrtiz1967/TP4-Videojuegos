@@ -34,7 +34,8 @@ var vida_actual: int = 1
 var monedas_actuales: int= 0
 var deslizando: bool= false
 var altura_colision_original: float= 0.0
-
+@export var tiempo_cooldown_empuje: float = 1.5
+var puede_empujar: bool = true
 
 func _ready() -> void:
 	add_to_group("jugadores")
@@ -93,8 +94,13 @@ func _physics_process(delta: float) -> void:
 func _input(event: InputEvent) -> void:
 	if animacion.animation == "morir" or recibiendo_golpe:
 		return
-	if event.is_action_pressed("izquierda") and not atacando:
+	if event.is_action_pressed("izquierda") and not atacando and puede_empujar:
 		velocity.x = -fuerza_empujon
+		puede_empujar = false
+		print("recargando empuje...")
+		await get_tree().create_timer(tiempo_cooldown_empuje).timeout
+		puede_empujar = true
+		print("empuje ready")
 	if event.is_action_pressed("derecha") and not atacando:
 		velocity.x = velocidad_acelerada
 	if event.is_action_released("derecha") and not atacando:
