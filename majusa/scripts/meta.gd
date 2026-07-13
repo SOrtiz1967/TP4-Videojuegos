@@ -1,6 +1,6 @@
 extends Area2D
 
-@export var monedas_necesarias: int= 15
+@export var monedas_necesarias: int= 50
 @export_file("*.tscn") var escena_siguiente: String
 
 func _ready() -> void:
@@ -13,4 +13,4 @@ func _al_entrar_cuerpo(body: Node2D) -> void:
 		if escena_siguiente != "":
 			get_tree().change_scene_to_file(escena_siguiente)
 	else:
-		get_tree().change_scene_to_file("res://scenes/menu_principal.tscn")
+		return

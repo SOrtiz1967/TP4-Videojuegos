@@ -29,7 +29,7 @@
 [ext_resource type="PackedScene" uid="uid://dn467bbqr1qcr" path="res://scenes/mapa/estructuras/jungla/barrera.tscn" id="27_iadvs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qm6nr"]
-size = Vector2(3926, 241)
+size = Vector2(3924, 241)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r6w1h"]
 size = Vector2(5901, 215)
@@ -44,7 +44,7 @@ size = Vector2(1020.5, 166)
 size = Vector2(3011, 193)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cokvo"]
-size = Vector2(17425.25, 93)
+size = Vector2(17422.25, 93)
 
 [node name="nivel1" type="Area2D" unique_id=720028765]
 
@@ -59,8 +59,8 @@ scale = Vector2(4.253382, 1.0163473)
 texture = ExtResource("2_851hy")
 
 [node name="fondo3" type="Sprite2D" parent="." unique_id=643893188]
-position = Vector2(14868.501, 56.12497)
-scale = Vector2(2.8855686, 1.7477453)
+position = Vector2(14868.501, 386.625)
+scale = Vector2(2.8855686, 1.0025367)
 texture = ExtResource("3_yc8pd")
 
 [node name="menu_pausa" parent="." unique_id=1012924372 instance=ExtResource("1_gwvgh")]
@@ -69,12 +69,12 @@ visible = false
 [node name="piso 5" type="StaticBody2D" parent="." unique_id=1629303890]
 
 [node name="Sprite2D" type="Sprite2D" parent="piso 5" unique_id=1777939363]
-position = Vector2(14158.5, 720)
-scale = Vector2(30.632805, 1.8281249)
+position = Vector2(14085.75, 719.99994)
+scale = Vector2(31.816406, 1.8281249)
 texture = ExtResource("3_gwvgh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="piso 5" unique_id=693363518]
-position = Vector2(14161, 724)
+position = Vector2(14006, 724)
 shape = SubResource("RectangleShape2D_qm6nr")
 
 [node name="EdificioBajo1" parent="piso 5" unique_id=961256580 instance=ExtResource("6_0pjdr")]
@@ -245,14 +245,14 @@ position = Vector2(1712, 491)
 position = Vector2(469, 508)
 
 [node name="ItemMoneda" parent="." unique_id=1804587596 instance=ExtResource("19_cokvo")]
-position = Vector2(846, 624)
+position = Vector2(780, 631)
 
 [node name="ItemMoneda2" parent="." unique_id=1871416231 instance=ExtResource("19_cokvo")]
-position = Vector2(988, 625)
+position = Vector2(1436, 609)
 tipo_actual = 1
 
 [node name="ItemMoneda3" parent="." unique_id=1999713578 instance=ExtResource("19_cokvo")]
-position = Vector2(1423, 620)
+position = Vector2(1619, 482)
 tipo_actual = 2
 
 [node name="ItemMoneda4" parent="." unique_id=470141538 instance=ExtResource("19_cokvo")]
@@ -281,10 +281,8 @@ collision_mask = 2
 script = ExtResource("19_qx8k3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="muerte" unique_id=687575498]
-position = Vector2(8714.375, 30)
+position = Vector2(8712.875, 30)
 shape = SubResource("RectangleShape2D_cokvo")
-
-[node name="HUD" parent="." unique_id=485234555 instance=ExtResource("21_5ruck")]
 
 [node name="malillo" parent="." unique_id=1275816925 instance=ExtResource("22_ojgse")]
 position = Vector2(910, 625)
@@ -352,7 +350,16 @@ collision_layer = 1
 position = Vector2(15187, 522)
 
 [node name="jugador" parent="." unique_id=1882298558 instance=ExtResource("1_birf2")]
-position = Vector2(14973, 561)
+position = Vector2(13262, 397)
 collision_mask = 7
 velocidad = 50.0
 max_saltos = 0
+
+[node name="HUD" parent="." unique_id=485234555 instance=ExtResource("21_5ruck")]
+
+[node name="Label" type="Label" parent="." unique_id=1722621908]
+offset_left = 16148.0
+offset_top = 90.0
+offset_right = 16242.0
+offset_bottom = 126.0
+text = "57 monedas"
