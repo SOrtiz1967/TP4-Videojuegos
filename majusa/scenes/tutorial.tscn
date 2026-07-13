@@ -1,0 +1,322 @@
+[gd_scene format=3 uid="uid://bjv4qthnbupdy"]
+
+[ext_resource type="Texture2D" uid="uid://bjekhtgod4pyl" path="res://assets/fondo/fondo1.png" id="1_fondo"]
+[ext_resource type="Texture2D" uid="uid://bj5a2o5ypte1g" path="res://icon.svg" id="2_piso"]
+[ext_resource type="PackedScene" uid="uid://bkcoaw6ar6t8n" path="res://scenes/jugador.tscn" id="3_jug"]
+[ext_resource type="PackedScene" uid="uid://l21ckdjcis7e" path="res://scenes/item_lanza.tscn" id="4_lanza"]
+[ext_resource type="PackedScene" path="res://scenes/item_moneda.tscn" id="5_moneda"]
+[ext_resource type="PackedScene" uid="uid://cjp445hwo64di" path="res://scenes/guardia.tscn" id="6_guardia"]
+[ext_resource type="PackedScene" uid="uid://cxwuwv6xfqfag" path="res://scenes/meta.tscn" id="7_meta"]
+[ext_resource type="Texture2D" uid="uid://y237ug0q26cc" path="res://assets/Keyboard Letters and Symbols.png" id="8_letras"]
+[ext_resource type="Texture2D" uid="uid://ds8oatl7pv47g" path="res://assets/Keyboard Extras.png" id="9_extras"]
+[ext_resource type="Texture2D" uid="uid://dkl1p7gw0vl8" path="res://assets/Huntress/Sprites/Run.png" id="10_run"]
+[ext_resource type="Texture2D" uid="uid://dnbdb02708uex" path="res://assets/Huntress/Sprites/Jump.png" id="11_jump"]
+[ext_resource type="Texture2D" uid="uid://ck2dkyon1ryeo" path="res://assets/Huntress/Sprites/Attack1.png" id="12_atk"]
+
+[sub_resource type="RectangleShape2D" id="SH_piso"]
+size = Vector2(3400, 120)
+
+[sub_resource type="AtlasTexture" id="AT_correr_0"]
+atlas = ExtResource("10_run")
+region = Rect2(0, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AT_correr_1"]
+atlas = ExtResource("10_run")
+region = Rect2(150, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AT_correr_2"]
+atlas = ExtResource("10_run")
+region = Rect2(300, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AT_correr_3"]
+atlas = ExtResource("10_run")
+region = Rect2(450, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AT_correr_4"]
+atlas = ExtResource("10_run")
+region = Rect2(600, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AT_correr_5"]
+atlas = ExtResource("10_run")
+region = Rect2(750, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AT_correr_6"]
+atlas = ExtResource("10_run")
+region = Rect2(900, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AT_correr_7"]
+atlas = ExtResource("10_run")
+region = Rect2(1050, 0, 150, 150)
+
+[sub_resource type="SpriteFrames" id="SF_correr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AT_correr_0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AT_correr_1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AT_correr_2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AT_correr_3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AT_correr_4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AT_correr_5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AT_correr_6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AT_correr_7")
+}],
+"loop": true,
+"name": &"correr",
+"speed": 9.0
+}]
+
+[sub_resource type="AtlasTexture" id="tecla_A"]
+atlas = ExtResource("8_letras")
+region = Rect2(0, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="tecla_D"]
+atlas = ExtResource("8_letras")
+region = Rect2(48, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AT_salto_0"]
+atlas = ExtResource("11_jump")
+region = Rect2(0, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AT_salto_1"]
+atlas = ExtResource("11_jump")
+region = Rect2(150, 0, 150, 150)
+
+[sub_resource type="SpriteFrames" id="SF_salto"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AT_salto_0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AT_salto_1")
+}],
+"loop": true,
+"name": &"saltar",
+"speed": 2.0
+}]
+
+[sub_resource type="AtlasTexture" id="tecla_space"]
+atlas = ExtResource("9_extras")
+region = Rect2(64, 32, 32, 16)
+
+[sub_resource type="AtlasTexture" id="tecla_shift"]
+atlas = ExtResource("9_extras")
+region = Rect2(0, 16, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AT_atk_0"]
+atlas = ExtResource("12_atk")
+region = Rect2(0, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AT_atk_1"]
+atlas = ExtResource("12_atk")
+region = Rect2(150, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AT_atk_2"]
+atlas = ExtResource("12_atk")
+region = Rect2(300, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AT_atk_3"]
+atlas = ExtResource("12_atk")
+region = Rect2(450, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AT_atk_4"]
+atlas = ExtResource("12_atk")
+region = Rect2(600, 0, 150, 150)
+
+[sub_resource type="SpriteFrames" id="SF_atacar"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AT_atk_0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AT_atk_1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AT_atk_2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AT_atk_3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AT_atk_4")
+}],
+"loop": true,
+"name": &"atacar",
+"speed": 7.0
+}]
+
+[node name="tutorial" type="Node2D" unique_id=44774629]
+
+[node name="fondo" type="Sprite2D" parent="." unique_id=744439440]
+position = Vector2(1428, 299)
+scale = Vector2(7, 3.5)
+texture = ExtResource("1_fondo")
+
+[node name="piso" type="StaticBody2D" parent="." unique_id=1871328713]
+
+[node name="Sprite2D" type="Sprite2D" parent="piso" unique_id=1969844120]
+position = Vector2(1500, 660)
+scale = Vector2(26.5, 0.95)
+texture = ExtResource("2_piso")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="piso" unique_id=199127248]
+position = Vector2(1500, 660)
+shape = SubResource("SH_piso")
+
+[node name="jugador" parent="." unique_id=1264195982 instance=ExtResource("3_jug")]
+position = Vector2(-144.32913, 586)
+
+[node name="itemMoneda" parent="." unique_id=1986502225 instance=ExtResource("5_moneda")]
+position = Vector2(1051, 583)
+
+[node name="itemLanza" parent="." unique_id=1224360393 instance=ExtResource("4_lanza")]
+position = Vector2(1615, 584)
+
+[node name="Guardia" parent="." unique_id=923587639 instance=ExtResource("6_guardia")]
+position = Vector2(2279, 577)
+
+[node name="Meta" parent="." unique_id=535014702 instance=ExtResource("7_meta")]
+position = Vector2(2960, 560)
+monedas_necesarias = 0
+escena_siguiente = "res://scenes/menu_principal.tscn"
+
+[node name="demoCorrer" type="AnimatedSprite2D" parent="." unique_id=1371601703]
+position = Vector2(28.999998, 504.43747)
+scale = Vector2(1.1683333, 1.0475)
+sprite_frames = SubResource("SF_correr")
+animation = &"correr"
+autoplay = "correr"
+
+[node name="lblMover" type="Label" parent="." unique_id=1189126645]
+offset_left = 55.0
+offset_top = 479.0
+offset_right = 176.0
+offset_bottom = 524.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 24
+text = "MOVERSE"
+horizontal_alignment = 1
+
+[node name="teclaA" type="Sprite2D" parent="." unique_id=1545798552]
+position = Vector2(64, 260)
+scale = Vector2(3.1874986, 2.7499986)
+texture = SubResource("tecla_A")
+
+[node name="teclaD" type="Sprite2D" parent="." unique_id=1669498708]
+position = Vector2(131, 273)
+scale = Vector2(3.1875002, 2.8750014)
+texture = SubResource("tecla_D")
+
+[node name="demoSalto" type="AnimatedSprite2D" parent="." unique_id=216859517]
+position = Vector2(670.00006, 513)
+scale = Vector2(1.1366662, 1.0166665)
+sprite_frames = SubResource("SF_salto")
+animation = &"saltar"
+autoplay = "saltar"
+
+[node name="lblSaltar" type="Label" parent="." unique_id=298709528]
+offset_left = 690.0
+offset_top = 477.0
+offset_right = 781.0
+offset_bottom = 522.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 24
+text = "SALTAR"
+horizontal_alignment = 1
+
+[node name="teclaEspacio" type="Sprite2D" parent="." unique_id=1904344823]
+position = Vector2(730.00006, 522)
+scale = Vector2(2.5, 2.5)
+texture = SubResource("tecla_space")
+
+[node name="lblDeslizar" type="Label" parent="." unique_id=719860746]
+offset_left = 1077.0
+offset_top = 476.0
+offset_right = 1397.0
+offset_bottom = 521.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 24
+text = "DESLIZARSE"
+horizontal_alignment = 1
+
+[node name="teclaShift" type="Sprite2D" parent="." unique_id=1014173001]
+position = Vector2(1237, 522)
+scale = Vector2(2.5, 2.5)
+texture = SubResource("tecla_shift")
+
+[node name="demoAtacar" type="AnimatedSprite2D" parent="." unique_id=2089921189]
+position = Vector2(1549, 508.00003)
+scale = Vector2(1.0766658, 1.03)
+sprite_frames = SubResource("SF_atacar")
+animation = &"atacar"
+autoplay = "atacar"
+
+[node name="lblAtacar" type="Label" parent="." unique_id=2078836558]
+offset_left = 1581.0
+offset_top = 479.0
+offset_right = 1901.0
+offset_bottom = 524.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 24
+text = "ATACAR"
+horizontal_alignment = 1
+
+[node name="lblAtacarInput" type="Label" parent="." unique_id=1987449834]
+offset_left = 1557.0
+offset_top = 501.0
+offset_right = 1957.0
+offset_bottom = 536.0
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 22
+text = "Click Izq: golpe   /   Click Der: lanza"
+horizontal_alignment = 1
+
+[node name="lblAtacarInput2" type="Label" parent="." unique_id=680833314]
+offset_left = 38.0
+offset_top = 503.0
+offset_right = 227.0
+offset_bottom = 538.0
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 22
+text = "Izq: A  /  Der: D"
+horizontal_alignment = 1
+
+[node name="lblPortal" type="Label" parent="." unique_id=851132046]
+offset_left = 2744.0
+offset_top = 470.0
+offset_right = 3184.0
+offset_bottom = 515.0
+theme_override_colors/font_color = Color(0.5, 0.8, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 30
+text = "ENTRÁ AL PORTAL"
+horizontal_alignment = 1

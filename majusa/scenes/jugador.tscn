@@ -429,11 +429,11 @@ offset = Vector2(3, 3)
 zoom = Vector2(3, 3)
 position_smoothing_enabled = true
 
-[node name="ZonaGolpe" type="Area2D" parent="."]
+[node name="ZonaGolpe" type="Area2D" parent="." unique_id=1612533675]
 collision_layer = 0
 collision_mask = 4
 monitoring = false
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ZonaGolpe"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ZonaGolpe" unique_id=280097676]
 position = Vector2(16, -2)
 shape = SubResource("SH_golpe")
