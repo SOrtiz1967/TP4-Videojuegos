@@ -21,6 +21,7 @@
 [ext_resource type="PackedScene" uid="uid://k7nin8y0a02m" path="res://scenes/item_moneda.tscn" id="19_cokvo"]
 [ext_resource type="Script" uid="uid://dejbmhxrhsilg" path="res://scripts/muerte.gd" id="19_qx8k3"]
 [ext_resource type="PackedScene" uid="uid://blc22oq0b324t" path="res://scenes/hud.tscn" id="21_5ruck"]
+[ext_resource type="PackedScene" uid="uid://5wwm1110u7on" path="res://scenes/malillo.tscn" id="22_ojgse"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qm6nr"]
 size = Vector2(4162, 241)
@@ -264,3 +265,6 @@ position = Vector2(8406, 30)
 shape = SubResource("RectangleShape2D_cokvo")
 
 [node name="HUD" parent="." unique_id=485234555 instance=ExtResource("21_5ruck")]
+
+[node name="malillo" parent="." unique_id=1275816925 instance=ExtResource("22_ojgse")]
+position = Vector2(910, 625)
