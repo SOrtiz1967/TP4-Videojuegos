@@ -1,0 +1,191 @@
+[gd_scene format=3 uid="uid://dq8ufk35j4xy"]
+
+[ext_resource type="Texture2D" uid="uid://dkeub0ou35i48" path="res://assets/fondo/fondo_jungla.png" id="1_o066t"]
+[ext_resource type="Texture2D" uid="uid://bj5a2o5ypte1g" path="res://icon.svg" id="2_5uo66"]
+[ext_resource type="PackedScene" uid="uid://nar142cqteiu" path="res://scenes/mapa/estructuras/jungla/arbol_jungla.tscn" id="3_8xhro"]
+[ext_resource type="PackedScene" uid="uid://dn467bbqr1qcr" path="res://scenes/mapa/estructuras/jungla/barrera.tscn" id="4_roi11"]
+[ext_resource type="PackedScene" uid="uid://bptcwtyxjiqkk" path="res://scenes/mapa/estructuras/jungla/casa_plataforma.tscn" id="5_gjjf1"]
+[ext_resource type="PackedScene" uid="uid://bypgtg7gk5le" path="res://scenes/mapa/estructuras/jungla/cuartel.tscn" id="6_cxqha"]
+[ext_resource type="PackedScene" uid="uid://cul0ruboqvy3r" path="res://scenes/mapa/estructuras/jungla/edificio_bajo.tscn" id="7_q3mfh"]
+[ext_resource type="PackedScene" uid="uid://cwovcr6k2vpnb" path="res://scenes/mapa/estructuras/jungla/edificio_medio_jungla.tscn" id="8_4bhft"]
+[ext_resource type="PackedScene" uid="uid://cnlaa1uk6x4bb" path="res://scenes/mapa/estructuras/jungla/plataforma_arbol.tscn" id="9_2xgxk"]
+[ext_resource type="PackedScene" uid="uid://sdhw31l2ashu" path="res://scenes/mapa/estructuras/jungla/edficio_alto_jungla.tscn" id="10_yl4lc"]
+[ext_resource type="PackedScene" uid="uid://cxtk8y3jmiyx1" path="res://scenes/mapa/estructuras/jungla/torre_jungla.tscn" id="11_ddq8v"]
+[ext_resource type="PackedScene" uid="uid://dapyqp5vtfoh8" path="res://scenes/mapa/estructuras/jungla/palacio_jungla.tscn" id="12_puna5"]
+[ext_resource type="PackedScene" uid="uid://ci8fy8qpsfdqx" path="res://scenes/mapa/estructuras/jungla/templo_jungla.tscn" id="13_omw2a"]
+[ext_resource type="PackedScene" uid="uid://bkcoaw6ar6t8n" path="res://scenes/jugador.tscn" id="14_8tsa1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o5303"]
+size = Vector2(630, 77)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u7odm"]
+size = Vector2(1553, 74)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_82kps"]
+size = Vector2(2415, 80)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_34i1w"]
+size = Vector2(3104, 90)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lc7oj"]
+size = Vector2(5879.5, 121)
+
+[node name="Nivel2" type="Area2D" unique_id=929041879]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=932841413]
+position = Vector2(1862.5, 343.5)
+scale = Vector2(2.4425027, 0.79932356)
+texture = ExtResource("1_o066t")
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1418358693]
+position = Vector2(7049.9326, 343.49997)
+scale = Vector2(3.4057865, 0.79932356)
+texture = ExtResource("1_o066t")
+
+[node name="Sprite2D3" type="Sprite2D" parent="." unique_id=1275509063]
+position = Vector2(12178.5, 340.75)
+scale = Vector2(2.3759866, 0.80552423)
+texture = ExtResource("1_o066t")
+
+[node name="piso1" type="StaticBody2D" parent="." unique_id=1231447245]
+
+[node name="Sprite2D" type="Sprite2D" parent="piso1" unique_id=1317482114]
+position = Vector2(269, 613.5)
+scale = Vector2(4.921875, 0.61718744)
+texture = ExtResource("2_5uo66")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="piso1" unique_id=1781232644]
+position = Vector2(268, 611.5)
+shape = SubResource("RectangleShape2D_o5303")
+
+[node name="piso2" type="StaticBody2D" parent="." unique_id=447771121]
+
+[node name="Sprite2D" type="Sprite2D" parent="piso2" unique_id=1625075895]
+position = Vector2(1450.5, 614.5)
+scale = Vector2(12.1484375, 0.64843744)
+texture = ExtResource("2_5uo66")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="piso2" unique_id=593149427]
+position = Vector2(1452.5, 614)
+shape = SubResource("RectangleShape2D_u7odm")
+
+[node name="piso4" type="StaticBody2D" parent="." unique_id=322028836]
+
+[node name="Sprite2D" type="Sprite2D" parent="piso4" unique_id=82381521]
+position = Vector2(3735, 609)
+scale = Vector2(18.671873, 0.640625)
+texture = ExtResource("2_5uo66")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="piso4" unique_id=1103106590]
+position = Vector2(3746.5, 610)
+shape = SubResource("RectangleShape2D_82kps")
+
+[node name="piso5" type="StaticBody2D" parent="." unique_id=1826145675]
+
+[node name="Sprite2D" type="Sprite2D" parent="piso5" unique_id=1156552798]
+position = Vector2(6641, 613)
+scale = Vector2(24.125002, 0.6875)
+texture = ExtResource("2_5uo66")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="piso5" unique_id=1586777153]
+position = Vector2(6638, 612)
+shape = SubResource("RectangleShape2D_34i1w")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1791617404]
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D" unique_id=1222642424]
+position = Vector2(11353.75, 604)
+scale = Vector2(45.675774, 1)
+texture = ExtResource("2_5uo66")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1022956174]
+position = Vector2(11370, 611)
+shape = SubResource("RectangleShape2D_lc7oj")
+
+[node name="ArbolJungla" parent="." unique_id=2032391913 instance=ExtResource("3_8xhro")]
+position = Vector2(1456, 458)
+
+[node name="Barrera" parent="." unique_id=1023978294 instance=ExtResource("4_roi11")]
+position = Vector2(1470, 554)
+
+[node name="CasaPlataforma" parent="." unique_id=408637709 instance=ExtResource("5_gjjf1")]
+position = Vector2(2130, 507)
+
+[node name="Cuartel" parent="." unique_id=1798515538 instance=ExtResource("6_cxqha")]
+position = Vector2(1793, 491)
+
+[node name="EdificioBajo" parent="." unique_id=1848362015 instance=ExtResource("7_q3mfh")]
+position = Vector2(2806, 519)
+
+[node name="EdificioMedioJungla" parent="." unique_id=578395392 instance=ExtResource("8_4bhft")]
+position = Vector2(2962, 503)
+
+[node name="PlataformaArbol" parent="." unique_id=2037191727 instance=ExtResource("9_2xgxk")]
+position = Vector2(5023, 489)
+
+[node name="EdficioAltoJungla" parent="." unique_id=1788785026 instance=ExtResource("10_yl4lc")]
+position = Vector2(3109, 427)
+
+[node name="TorreJungla" parent="." unique_id=2012515869 instance=ExtResource("11_ddq8v")]
+position = Vector2(3384, 462)
+
+[node name="Barrera2" parent="." unique_id=992447436 instance=ExtResource("4_roi11")]
+position = Vector2(3220, 544)
+
+[node name="PalacioJungla" parent="." unique_id=676590125 instance=ExtResource("12_puna5")]
+position = Vector2(3781, 496)
+
+[node name="EdificioBajo2" parent="." unique_id=347189457 instance=ExtResource("7_q3mfh")]
+position = Vector2(4323, 523)
+
+[node name="EdificioMedioJungla2" parent="." unique_id=342476864 instance=ExtResource("8_4bhft")]
+position = Vector2(4159, 507)
+
+[node name="EdificioBajo3" parent="." unique_id=1584315271 instance=ExtResource("7_q3mfh")]
+position = Vector2(4708, 520)
+
+[node name="ArbolJungla2" parent="." unique_id=637203102 instance=ExtResource("3_8xhro")]
+position = Vector2(1219, 459)
+
+[node name="EdificioBajo4" parent="." unique_id=10992555 instance=ExtResource("7_q3mfh")]
+position = Vector2(820, 527)
+
+[node name="EdificioMedioJungla3" parent="." unique_id=1483900677 instance=ExtResource("8_4bhft")]
+position = Vector2(978, 511)
+
+[node name="PalacioJungla2" parent="." unique_id=1940267315 instance=ExtResource("12_puna5")]
+position = Vector2(5814, 490)
+
+[node name="EdficioAltoJungla2" parent="." unique_id=1330732922 instance=ExtResource("10_yl4lc")]
+position = Vector2(6023, 426)
+
+[node name="EdficioAltoJungla3" parent="." unique_id=24275954 instance=ExtResource("10_yl4lc")]
+position = Vector2(5597, 428)
+
+[node name="EdificioMedioJungla4" parent="." unique_id=1484084377 instance=ExtResource("8_4bhft")]
+position = Vector2(5366, 504)
+
+[node name="Barrera3" parent="." unique_id=1454571008 instance=ExtResource("4_roi11")]
+position = Vector2(5556, 544)
+
+[node name="CasaPlataforma2" parent="." unique_id=2085903127 instance=ExtResource("5_gjjf1")]
+position = Vector2(6348, 511)
+
+[node name="EdificioBajo5" parent="." unique_id=535580822 instance=ExtResource("7_q3mfh")]
+position = Vector2(6574, 517)
+
+[node name="TemploJungla" parent="." unique_id=1483277828 instance=ExtResource("13_omw2a")]
+position = Vector2(6912, 355)
+
+[node name="EdificioBajo6" parent="." unique_id=1277437758 instance=ExtResource("7_q3mfh")]
+position = Vector2(7406, 518)
+
+[node name="EdificioMedioJungla5" parent="." unique_id=931178978 instance=ExtResource("8_4bhft")]
+position = Vector2(7320, 503)
+
+[node name="Barrera4" parent="." unique_id=958193174 instance=ExtResource("4_roi11")]
+position = Vector2(7605, 542)
+
+[node name="jugador" parent="." unique_id=1882298558 instance=ExtResource("14_8tsa1")]
+position = Vector2(48, 554)
+velocidad_acelerada = 50.0

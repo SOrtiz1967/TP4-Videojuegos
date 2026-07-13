@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://cnlaa1uk6x4bb"]
+
+[ext_resource type="Texture2D" uid="uid://bt5vcmikwpe3w" path="res://assets/fondo/estructuras/jungla/platafotma_arbol.png" id="1_b5hd3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4jl70"]
+size = Vector2(187, 18)
+
+[node name="PlataformaArbol" type="StaticBody2D" unique_id=2037191727]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1927263463]
+position = Vector2(-4, -38.000004)
+scale = Vector2(0.22851571, 0.2753906)
+texture = ExtResource("1_b5hd3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=831500975]
+position = Vector2(-6.5, 8)
+shape = SubResource("RectangleShape2D_4jl70")
+one_way_collision = true

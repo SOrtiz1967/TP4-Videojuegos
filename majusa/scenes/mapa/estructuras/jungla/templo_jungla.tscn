@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://ci8fy8qpsfdqx"]
+
+[ext_resource type="Texture2D" uid="uid://ddyqnlo8oh5wi" path="res://assets/fondo/estructuras/jungla/templo_jungla.png" id="1_b6rmd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5cyai"]
+size = Vector2(281, 11)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t66ev"]
+size = Vector2(203, 9)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qbk10"]
+size = Vector2(122, 7)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m0aal"]
+size = Vector2(94, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a534s"]
+size = Vector2(103, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m4hwc"]
+size = Vector2(100, 11)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x4xnt"]
+size = Vector2(160, 7)
+
+[node name="TemploJungla" type="StaticBody2D" unique_id=1483277828]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1705151533]
+position = Vector2(8.000046, 67.00003)
+scale = Vector2(0.33626303, 0.33251953)
+texture = ExtResource("1_b6rmd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=911551673]
+position = Vector2(8.5, 110.5)
+shape = SubResource("RectangleShape2D_5cyai")
+one_way_collision = true
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=672247288]
+position = Vector2(9.5, 61.5)
+shape = SubResource("RectangleShape2D_t66ev")
+one_way_collision = true
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="." unique_id=1256987490]
+position = Vector2(10, -10.5)
+shape = SubResource("RectangleShape2D_qbk10")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="." unique_id=734899800]
+position = Vector2(11, -59)
+shape = SubResource("RectangleShape2D_m0aal")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="." unique_id=526413196]
+position = Vector2(-103, 152)
+shape = SubResource("RectangleShape2D_a534s")
+one_way_collision = true
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="." unique_id=2028692237]
+position = Vector2(121, 151.5)
+shape = SubResource("RectangleShape2D_m4hwc")
+one_way_collision = true
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="." unique_id=938694]
+position = Vector2(9, 19.5)
+shape = SubResource("RectangleShape2D_x4xnt")

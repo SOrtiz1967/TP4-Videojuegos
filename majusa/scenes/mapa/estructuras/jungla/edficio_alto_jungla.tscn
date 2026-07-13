@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://sdhw31l2ashu"]
+
+[ext_resource type="Texture2D" uid="uid://cb22hvdw33md4" path="res://assets/fondo/estructuras/jungla/edificio_alto_jungla.png" id="1_ow7hy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f2yxi"]
+size = Vector2(164, 7)
+
+[node name="EdficioAltoJungla" type="StaticBody2D" unique_id=1788785026]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1718955510]
+position = Vector2(9.536743e-07, -2.3841858e-07)
+scale = Vector2(0.28894043, 0.24544272)
+texture = ExtResource("1_ow7hy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=321374881]
+position = Vector2(5, -81.5)
+shape = SubResource("RectangleShape2D_f2yxi")
+one_way_collision = true

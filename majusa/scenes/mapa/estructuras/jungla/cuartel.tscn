@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://bypgtg7gk5le"]
+
+[ext_resource type="Texture2D" uid="uid://840kn3yku6eh" path="res://assets/fondo/estructuras/jungla/cuartel.png" id="1_i7o5v"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f7ie3"]
+size = Vector2(300, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tsp5h"]
+size = Vector2(347, 7)
+
+[node name="Cuartel" type="StaticBody2D" unique_id=1798515538]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1957258317]
+position = Vector2(0.9999981, 1)
+scale = Vector2(0.2972005, 0.27539063)
+texture = ExtResource("1_i7o5v")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=287372326]
+position = Vector2(28, -4)
+shape = SubResource("RectangleShape2D_f7ie3")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=183679498]
+position = Vector2(1.5, -58.5)
+shape = SubResource("RectangleShape2D_tsp5h")

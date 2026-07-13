@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://nar142cqteiu"]
+
+[ext_resource type="Texture2D" uid="uid://cawa4wm7y4wex" path="res://assets/fondo/estructuras/jungla/arbol_jungla.png" id="1_jwk8i"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8yqw5"]
+size = Vector2(150, 7)
+
+[node name="ArbolJungla" type="StaticBody2D" unique_id=2032391913]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1537564268]
+scale = Vector2(0.24446608, 0.31738278)
+texture = ExtResource("1_jwk8i")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=956812518]
+shape = SubResource("RectangleShape2D_8yqw5")

@@ -220,4 +220,9 @@ func recolectar_moneda(valor: int) -> void:
 	monedas_actuales += valor
 	monedas_cambiadas.emit(monedas_actuales)
 	print("pungeaste una moneda rati ", monedas_actuales)
-	
+
+
+func rebotar_en_enemigo() -> void:
+	velocity.y = -800
+	saltos_actuales = 1 
+	print("voinki")
