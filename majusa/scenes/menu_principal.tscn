@@ -1,6 +1,6 @@
-[gd_scene format=3 uid="uid://ywit5whw4t3d"]
+[gd_scene format=3 uid="uid://hyjhxbfl76u4"]
 
-[ext_resource type="Script" uid="uid://dvy0mh3xscywg" path="res://scripts/menu_principal.gd" id="1"]
+[ext_resource type="Script" path="res://scripts/menu_principal.gd" id="1"]
 [ext_resource type="Texture2D" uid="uid://3pldpias55uq" path="res://assets/fondo/menuPrincipal.png" id="2_mk4g1"]
 
 [node name="menu_principal" type="Control" unique_id=449812220]
@@ -48,7 +48,7 @@ offset_left = 401.0
 offset_top = 302.0
 offset_right = 760.0
 offset_bottom = 412.0
-text = "Opciones"
+text = "Tutorial"
 flat = true
 
 [node name="boton_salir" type="Button" parent="panel" unique_id=1236511312]
