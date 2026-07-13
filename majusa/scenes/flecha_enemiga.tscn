@@ -1,21 +1,21 @@
 [gd_scene format=3 uid="uid://db0vb6yu7iabb"]
 
-[ext_resource type="Script" uid="uid://bnq7x4kwd2f8a" path="res://scripts/flecha_enemiga.gd" id="1_flecha"]
-[ext_resource type="Texture2D" uid="uid://5kmshqiyxyl" path="res://assets/Pixel Art Icon Pack - RPG/Weapon & Tool/Arrow.png" id="2_flecha"]
+[ext_resource type="Script" uid="uid://cwy3o2s7gtaoy" path="res://scripts/flecha_enemiga.gd" id="1_flecha"]
+[ext_resource type="Texture2D" uid="uid://u62a2jhvm2px" path="res://assets/Pixel Art Icon Pack - RPG/Monster Part/Skull.png" id="2_6hlpd"]
 
 [sub_resource type="RectangleShape2D" id="SH_flecha"]
 size = Vector2(16, 6)
 
-[node name="flecha_enemiga" type="Area2D"]
+[node name="flecha_enemiga" type="Area2D" unique_id=63233052]
 collision_layer = 0
 collision_mask = 3
 script = ExtResource("1_flecha")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2078010569]
 scale = Vector2(0.7, 0.7)
-texture = ExtResource("2_flecha")
+texture = ExtResource("2_6hlpd")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=841905981]
 shape = SubResource("SH_flecha")
 
-[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=458740819]

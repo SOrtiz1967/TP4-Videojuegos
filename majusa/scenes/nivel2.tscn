@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://dq8ufk35j4xy"]
+[gd_scene format=3 uid="uid://cpy8farn4pnmt"]
 
 [ext_resource type="Texture2D" uid="uid://dkeub0ou35i48" path="res://assets/fondo/fondo_jungla.png" id="1_o066t"]
 [ext_resource type="Texture2D" uid="uid://bj5a2o5ypte1g" path="res://icon.svg" id="2_5uo66"]
@@ -14,6 +14,9 @@
 [ext_resource type="PackedScene" uid="uid://dapyqp5vtfoh8" path="res://scenes/mapa/estructuras/jungla/palacio_jungla.tscn" id="12_puna5"]
 [ext_resource type="PackedScene" uid="uid://ci8fy8qpsfdqx" path="res://scenes/mapa/estructuras/jungla/templo_jungla.tscn" id="13_omw2a"]
 [ext_resource type="PackedScene" uid="uid://bkcoaw6ar6t8n" path="res://scenes/jugador.tscn" id="14_8tsa1"]
+[ext_resource type="PackedScene" uid="uid://bj84c8fnjdd3s" path="res://scenes/embestidor.tscn" id="15_embest"]
+[ext_resource type="PackedScene" path="res://scenes/malillo.tscn" id="16_malillo"]
+[ext_resource type="PackedScene" uid="uid://cgckdyp5l6mk1" path="res://scenes/arquero.tscn" id="17_arquero"]
 [ext_resource type="Script" uid="uid://dejbmhxrhsilg" path="res://scripts/muerte.gd" id="15_5uo66"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o5303"]
@@ -192,6 +195,20 @@ position = Vector2(7605, 542)
 
 [node name="jugador" parent="." unique_id=1882298558 instance=ExtResource("14_8tsa1")]
 position = Vector2(48, 554)
+velocidad_acelerada = 50.0
+
+[node name="Embestidor1" parent="." unique_id=1327742710 instance=ExtResource("15_embest")]
+position = Vector2(6695, 543)
+
+[node name="Embestidor2" parent="." unique_id=290002070 instance=ExtResource("15_embest")]
+position = Vector2(3972, 524)
+
+[node name="malillo" parent="." unique_id=186656782 instance=ExtResource("16_malillo")]
+position = Vector2(6110, 552)
+
+[node name="Arquero" parent="." unique_id=626762104 instance=ExtResource("17_arquero")]
+position = Vector2(1916, 557)
+mira_derecha = false
 
 [node name="muerte" type="Area2D" parent="." unique_id=323002474]
 position = Vector2(-1, 844)
