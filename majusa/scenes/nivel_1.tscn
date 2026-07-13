@@ -18,18 +18,19 @@
 [ext_resource type="PackedScene" path="res://scenes/mapa/estructuras/posada.tscn" id="16_0qj6g"]
 [ext_resource type="PackedScene" path="res://scenes/mapa/estructuras/edificio_alto.tscn" id="17_qx8k3"]
 [ext_resource type="PackedScene" path="res://scenes/mapa/estructuras/molino.tscn" id="18_cokvo"]
-[ext_resource type="PackedScene" uid="uid://k7nin8y0a02m" path="res://scenes/item_moneda.tscn" id="19_cokvo"]
-[ext_resource type="Script" uid="uid://dejbmhxrhsilg" path="res://scripts/muerte.gd" id="19_qx8k3"]
-[ext_resource type="PackedScene" uid="uid://blc22oq0b324t" path="res://scenes/hud.tscn" id="21_5ruck"]
+[ext_resource type="PackedScene" path="res://scenes/item_moneda.tscn" id="19_cokvo"]
+[ext_resource type="Script" path="res://scripts/muerte.gd" id="19_qx8k3"]
+[ext_resource type="PackedScene" path="res://scenes/hud.tscn" id="21_5ruck"]
 [ext_resource type="PackedScene" uid="uid://cjp445hwo64di" path="res://scenes/guardia.tscn" id="22_guardia"]
+[ext_resource type="PackedScene" path="res://scenes/malillo.tscn" id="22_ojgse"]
 [ext_resource type="PackedScene" uid="uid://bj84c8fnjdd3s" path="res://scenes/embestidor.tscn" id="23_embestidor"]
-[ext_resource type="PackedScene" uid="uid://5wwm1110u7on" path="res://scenes/malillo.tscn" id="22_ojgse"]
+[ext_resource type="PackedScene" path="res://scenes/meta.tscn" id="24_meta"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qm6nr"]
 size = Vector2(4162, 241)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r6w1h"]
-size = Vector2(5830, 215)
+size = Vector2(5901, 215)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_birf2"]
 size = Vector2(1308, 152)
@@ -81,12 +82,12 @@ position = Vector2(5442, 595)
 position = Vector2(6172, -1274)
 
 [node name="Sprite2D" type="Sprite2D" parent="piso4" unique_id=985806699]
-position = Vector2(2641.0005, 2004.75)
-scale = Vector2(45.5, 1.9101563)
+position = Vector2(2574.5005, 2004.75)
+scale = Vector2(46.53906, 1.9101563)
 texture = ExtResource("3_gwvgh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="piso4" unique_id=1421368351]
-position = Vector2(2588, 2008)
+position = Vector2(2552.5, 2008)
 shape = SubResource("RectangleShape2D_r6w1h")
 
 [node name="piso1" type="StaticBody2D" parent="." unique_id=33786677]
@@ -268,6 +269,10 @@ position = Vector2(1986, 628)
 
 [node name="Embestidor2" parent="." unique_id=1406252049 instance=ExtResource("23_embestidor")]
 position = Vector2(3455, 622)
+
+[node name="Meta" parent="." unique_id=94450826 instance=ExtResource("24_meta")]
+position = Vector2(11093, 590)
+escena_siguiente = "res://scenes/nivel2.tscn"
 
 [node name="muerte" type="Area2D" parent="." unique_id=1650028125]
 position = Vector2(-1, 844)
