@@ -21,6 +21,8 @@
 [ext_resource type="PackedScene" uid="uid://k7nin8y0a02m" path="res://scenes/item_moneda.tscn" id="19_cokvo"]
 [ext_resource type="Script" uid="uid://dejbmhxrhsilg" path="res://scripts/muerte.gd" id="19_qx8k3"]
 [ext_resource type="PackedScene" uid="uid://blc22oq0b324t" path="res://scenes/hud.tscn" id="21_5ruck"]
+[ext_resource type="PackedScene" uid="uid://cjp445hwo64di" path="res://scenes/guardia.tscn" id="22_guardia"]
+[ext_resource type="PackedScene" uid="uid://bj84c8fnjdd3s" path="res://scenes/embestidor.tscn" id="23_embestidor"]
 [ext_resource type="PackedScene" uid="uid://5wwm1110u7on" path="res://scenes/malillo.tscn" id="22_ojgse"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qm6nr"]
@@ -90,8 +92,8 @@ shape = SubResource("RectangleShape2D_r6w1h")
 [node name="piso1" type="StaticBody2D" parent="." unique_id=33786677]
 
 [node name="Sprite2D" type="Sprite2D" parent="piso1" unique_id=95264700]
-position = Vector2(701.75, 720)
-scale = Vector2(7.2382817, 1.1796875)
+position = Vector2(512.00006, 720)
+scale = Vector2(10.203125, 1.1796875)
 texture = ExtResource("3_gwvgh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="piso1" unique_id=1511304230]
@@ -254,6 +256,18 @@ tipo_actual = 1
 [node name="ItemMoneda3" parent="." unique_id=1999713578 instance=ExtResource("19_cokvo")]
 position = Vector2(1423, 620)
 tipo_actual = 2
+
+[node name="Guardia1" parent="." unique_id=1045680526 instance=ExtResource("22_guardia")]
+position = Vector2(599, 629)
+
+[node name="Guardia2" parent="." unique_id=1593246772 instance=ExtResource("22_guardia")]
+position = Vector2(3029, 624)
+
+[node name="Embestidor1" parent="." unique_id=1093598251 instance=ExtResource("23_embestidor")]
+position = Vector2(1986, 628)
+
+[node name="Embestidor2" parent="." unique_id=1406252049 instance=ExtResource("23_embestidor")]
+position = Vector2(3455, 622)
 
 [node name="muerte" type="Area2D" parent="." unique_id=1650028125]
 position = Vector2(-1, 844)

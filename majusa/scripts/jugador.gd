@@ -15,8 +15,14 @@ var saltos_actuales: int= 0
 @export var velocidad_base: float= 150.0
 @export var fuerza_empujon: float= 400.0
 @export var friccion: float= 900.0
+@export var velocidad_deslizamiento: float= 200.0
+@export var tiempo_deslizamiento: float= 0.25
+@export var factor_altura_deslizamiento: float= 0.55
+@export var retraso_golpe: float= 0.15
 
 @onready var animacion= $AnimatedSprite2D
+@onready var forma_colision= $CollisionShape2D
+@onready var zona_golpe= $ZonaGolpe
 @onready var vidas: int= vida_maxima
 var municion_lanza: int = 0
 var gravedad= ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -26,13 +32,25 @@ var recibiendo_golpe: bool= false
 var vida_maxima: int = 3
 var vida_actual: int = 1
 var monedas_actuales: int= 0
+var deslizando: bool= false
+var altura_colision_original: float= 0.0
 
 
 func _ready() -> void:
 	add_to_group("jugadores")
+	altura_colision_original= forma_colision.shape.size.y
 
 func _physics_process(delta: float) -> void:
-	
+
+	if animacion.animation == "morir":
+		return
+
+	if deslizando:
+		if not is_on_floor():
+			velocity.y+= gravedad * delta
+		move_and_slide()
+		return
+
 	if atacando or recibiendo_golpe:
 		velocity.x=move_toward(velocity.x, 0, friccion * delta)
 		move_and_slide()
@@ -96,6 +114,20 @@ func _input(event: InputEvent) -> void:
 		ataque_normal()
 	if event.is_action_pressed("atacar_lanza") and not atacando:
 		ataque_lanza()
+	if event.is_action_pressed("deslizar") and is_on_floor() and not atacando and not deslizando:
+		deslizarse()
+
+func deslizarse() -> void:
+	deslizando= true
+	forma_colision.shape.size.y= altura_colision_original * factor_altura_deslizamiento
+	if ultima_dir == "derecha":
+		velocity.x= velocidad_deslizamiento
+	else:
+		velocity.x= -velocidad_deslizamiento
+	actualizar_animacion("correr")
+	await get_tree().create_timer(tiempo_deslizamiento).timeout
+	forma_colision.shape.size.y= altura_colision_original
+	deslizando= false
 
 func equipar_lanza(escena_recibida: PackedScene) -> void:
 	municion_lanza += 3 
@@ -109,16 +141,19 @@ func bajar_plataforma() -> void:
 	#atravesar plataformas
 	set_collision_mask_value(1, true)
 func ataque_normal() -> void:
-	if municion_lanza <= 0:
-		print("no tenes lanza!")
-		return
 	atacando=true
-	velocity =Vector2.ZERO 
-	
+	velocity =Vector2.ZERO
+	if ultima_dir == "izquierda":
+		zona_golpe.position.x= -abs(zona_golpe.position.x)
+	else:
+		zona_golpe.position.x= abs(zona_golpe.position.x)
 	animacion.play("atacar1")
-	
-	#logica de ataque piña
-	
+	zona_golpe.monitoring= true
+	await get_tree().create_timer(retraso_golpe).timeout
+	for cuerpo in zona_golpe.get_overlapping_bodies():
+		if cuerpo.is_in_group("enemigos") and cuerpo.has_method("recibir_daño"):
+			cuerpo.recibir_daño(daño)
+	zona_golpe.monitoring= false
 	await animacion.animation_finished
 	atacando=false
 
@@ -163,7 +198,8 @@ func recibir_daño(daño_recibido: int) -> void:
 	vida_cambiada.emit(vidas)
 	if vidas <= 0:
 		animacion.play("morir")
-		print("mantecoño")
+		await animacion.animation_finished
+		get_tree().change_scene_to_file("res://scenes/menu_principal.tscn")
 	else:
 		recibiendo_golpe=true
 		animacion.play("recibir_golpe")

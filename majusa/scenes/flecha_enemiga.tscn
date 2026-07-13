@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://db0vb6yu7iabb"]
+
+[ext_resource type="Script" uid="uid://bnq7x4kwd2f8a" path="res://scripts/flecha_enemiga.gd" id="1_flecha"]
+[ext_resource type="Texture2D" uid="uid://5kmshqiyxyl" path="res://assets/Pixel Art Icon Pack - RPG/Weapon & Tool/Arrow.png" id="2_flecha"]
+
+[sub_resource type="RectangleShape2D" id="SH_flecha"]
+size = Vector2(16, 6)
+
+[node name="flecha_enemiga" type="Area2D"]
+collision_layer = 0
+collision_mask = 3
+script = ExtResource("1_flecha")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("2_flecha")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("SH_flecha")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
