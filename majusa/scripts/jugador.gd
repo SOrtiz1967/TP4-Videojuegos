@@ -66,7 +66,8 @@ func _physics_process(delta: float) -> void:
 	velocity.x=move_toward(velocity.x, velocidad_objetivo, friccion * delta)
 	
 	if is_on_floor():
-		saltos_actuales= 0
+		if velocity.y >= 0:
+			saltos_actuales = 0
 		actualizar_animacion("correr")
 	else:
 		if velocity.y < 0:
@@ -237,5 +238,5 @@ func rebotar_en_enemigo() -> void:
 	print("voinki")
 
 func habilitar_doble_salto() -> void:
-	max_saltos = 1
+	max_saltos = 2
 	print("doble salto!")
