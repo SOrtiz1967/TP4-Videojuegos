@@ -34,7 +34,7 @@ var vida_actual: int = 1
 var monedas_actuales: int= 0
 var deslizando: bool= false
 var altura_colision_original: float= 0.0
-@export var tiempo_cooldown_empuje: float = 0.5
+@export var tiempo_cooldown_empuje: float = 0.1
 var puede_empujar: bool = true
 
 func _ready() -> void:

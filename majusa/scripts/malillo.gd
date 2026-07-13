@@ -2,7 +2,6 @@ extends CharacterBody2D
 
 var gravedad = ProjectSettings.get_setting("physics/2d/default_gravity")
 var daño_enemigo: int = 1
-
 var vida_enemigo: int = 1 
 @onready var zona_golpe = $Area2D
 

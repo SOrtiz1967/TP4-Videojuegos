@@ -1,6 +1,6 @@
 extends Area2D
 
-@export var monedas_necesarias: int= 50
+@export var monedas_necesarias: int= 80
 @export_file("*.tscn") var escena_siguiente: String
 
 func _ready() -> void:

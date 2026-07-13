@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://bxsn6g6lyms0l" path="res://assets/fondo/estructuras/edificio_medio.png" id="1_l4jy8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5b7js"]
-size = Vector2(175, 15)
+size = Vector2(175, 9)
 
 [node name="EdificioAlto" type="StaticBody2D" unique_id=1232541929]
 
@@ -13,5 +13,5 @@ scale = Vector2(0.16992188, 0.38964844)
 texture = ExtResource("1_l4jy8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=435218621]
-position = Vector2(-1.5, -110.5)
+position = Vector2(-1.5, -113.5)
 shape = SubResource("RectangleShape2D_5b7js")

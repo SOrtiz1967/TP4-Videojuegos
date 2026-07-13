@@ -3,8 +3,8 @@ extends CharacterBody2D
 @export var escena_flecha: PackedScene
 @export var vida: int= 2
 @export var daño: int= 1
-@export var mira_derecha: bool= true
-@export var cadencia_daño: float= 0.8
+@export var mira_derecha: bool= false
+@export var cadencia_daño: float= 2.0
 
 var muerto: bool= false
 var reloj_daño: float= 0.0
@@ -16,7 +16,7 @@ var reloj_daño: float= 0.0
 
 func _ready() -> void:
 	add_to_group("enemigos")
-	animacion.flip_h= not mira_derecha
+	animacion.flip_h= true
 	temporizador.timeout.connect(_disparar)
 	animacion.play("reposo")
 

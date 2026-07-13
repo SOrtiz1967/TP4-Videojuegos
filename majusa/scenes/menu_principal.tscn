@@ -1,6 +1,6 @@
-[gd_scene format=3 uid="uid://hyjhxbfl76u4"]
+[gd_scene format=3 uid="uid://ywit5whw4t3d"]
 
-[ext_resource type="Script" path="res://scripts/menu_principal.gd" id="1"]
+[ext_resource type="Script" uid="uid://dvy0mh3xscywg" path="res://scripts/menu_principal.gd" id="1"]
 [ext_resource type="Texture2D" uid="uid://3pldpias55uq" path="res://assets/fondo/menuPrincipal.png" id="2_mk4g1"]
 
 [node name="menu_principal" type="Control" unique_id=449812220]
@@ -39,6 +39,7 @@ offset_left = 398.0
 offset_top = 165.0
 offset_right = 759.0
 offset_bottom = 265.0
+theme_override_font_sizes/font_size = 31
 text = "Jugar"
 flat = true
 
@@ -48,6 +49,7 @@ offset_left = 401.0
 offset_top = 302.0
 offset_right = 760.0
 offset_bottom = 412.0
+theme_override_font_sizes/font_size = 31
 text = "Tutorial"
 flat = true
 
@@ -57,6 +59,7 @@ offset_left = 398.0
 offset_top = 439.0
 offset_right = 763.0
 offset_bottom = 549.0
+theme_override_font_sizes/font_size = 31
 text = "Salir"
 flat = true
 
