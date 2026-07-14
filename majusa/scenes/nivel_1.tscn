@@ -29,6 +29,8 @@
 [ext_resource type="PackedScene" uid="uid://dn467bbqr1qcr" path="res://scenes/mapa/estructuras/jungla/barrera.tscn" id="27_iadvs"]
 [ext_resource type="PackedScene" uid="uid://cgckdyp5l6mk1" path="res://scenes/arquero.tscn" id="28_sbbnf"]
 [ext_resource type="PackedScene" uid="uid://d13140ct8mnu6" path="res://scenes/lanza.tscn" id="29_v2lus"]
+[ext_resource type="PackedScene" uid="uid://1f4tvlt0jcq1" path="res://scenes/mapa/ui/menu_muerte.tscn" id="30_muerte"]
+[ext_resource type="PackedScene" uid="uid://p1tn4pxri4sn" path="res://scenes/mapa/ui/menu_victoria.tscn" id="31_victoria"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qm6nr"]
 size = Vector2(4085, 241)
@@ -67,6 +69,10 @@ texture = ExtResource("3_yc8pd")
 
 [node name="menu_pausa" parent="." unique_id=1012924372 instance=ExtResource("1_gwvgh")]
 visible = false
+
+[node name="menu_muerte" parent="." unique_id=407443431 instance=ExtResource("30_muerte")]
+
+[node name="menu_victoria" parent="." unique_id=645828787 instance=ExtResource("31_victoria")]
 
 [node name="piso 5" type="StaticBody2D" parent="." unique_id=1629303890]
 

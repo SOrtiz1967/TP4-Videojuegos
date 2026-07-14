@@ -24,6 +24,9 @@
 [ext_resource type="PackedScene" uid="uid://dgb7r0grccc7k" path="res://scenes/item_armor.tscn" id="22_puna5"]
 [ext_resource type="PackedScene" uid="uid://dtoesw6shets" path="res://scenes/item_salto.tscn" id="23_yl4lc"]
 [ext_resource type="PackedScene" uid="uid://cxwuwv6xfqfag" path="res://scenes/meta.tscn" id="25_puna5"]
+[ext_resource type="PackedScene" uid="uid://7kci5ld5fipy" path="res://scenes/mapa/ui/menu_pausa.tscn" id="28_pausa"]
+[ext_resource type="PackedScene" uid="uid://1f4tvlt0jcq1" path="res://scenes/mapa/ui/menu_muerte.tscn" id="26_muerte"]
+[ext_resource type="PackedScene" uid="uid://p1tn4pxri4sn" path="res://scenes/mapa/ui/menu_victoria.tscn" id="27_victoria"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o5303"]
 size = Vector2(630, 77)
@@ -380,6 +383,13 @@ position = Vector2(10400, 500)
 
 [node name="meta" parent="." unique_id=668783768 instance=ExtResource("25_puna5")]
 position = Vector2(13857, 482)
+
+[node name="menu_pausa" parent="." instance=ExtResource("28_pausa")]
+visible = false
+
+[node name="menu_muerte" parent="." instance=ExtResource("26_muerte")]
+
+[node name="menu_victoria" parent="." instance=ExtResource("27_victoria")]
 
 [node name="EdificioMedioJungla7" parent="." unique_id=521114779 instance=ExtResource("8_4bhft")]
 position = Vector2(11103, 485)
