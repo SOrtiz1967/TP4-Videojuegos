@@ -209,6 +209,7 @@ collision_layer = 4
 script = ExtResource("1_arquero")
 escena_flecha = ExtResource("2_flecha")
 vida = 1
+"cadencia_daño" = 3.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=371979406]
 scale = Vector2(0.8, 0.8)

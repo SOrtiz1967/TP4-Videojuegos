@@ -426,7 +426,7 @@ shape = SubResource("SH_cuerpo")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1941658790]
 offset = Vector2(3, 3)
-zoom = Vector2(1.5, 1.5)
+zoom = Vector2(2, 2)
 position_smoothing_enabled = true
 
 [node name="ZonaGolpe" type="Area2D" parent="." unique_id=270605791]

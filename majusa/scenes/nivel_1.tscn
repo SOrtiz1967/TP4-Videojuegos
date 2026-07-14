@@ -37,10 +37,10 @@ size = Vector2(4085, 241)
 size = Vector2(5953.5, 215)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_birf2"]
-size = Vector2(1308, 152)
+size = Vector2(1334, 152)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gwvgh"]
-size = Vector2(1020.5, 166)
+size = Vector2(984.5, 166)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5hr2l"]
 size = Vector2(3061, 193)
@@ -97,23 +97,23 @@ shape = SubResource("RectangleShape2D_r6w1h")
 [node name="piso1" type="StaticBody2D" parent="." unique_id=33786677]
 
 [node name="Sprite2D" type="Sprite2D" parent="piso1" unique_id=95264700]
-position = Vector2(509.49994, 741)
-scale = Vector2(0.9498698, 1.0546874)
+position = Vector2(523, 741)
+scale = Vector2(0.96744806, 1.0546874)
 texture = ExtResource("7_aga2y")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="piso1" unique_id=1511304230]
-position = Vector2(512, 721)
+position = Vector2(525, 721)
 shape = SubResource("RectangleShape2D_birf2")
 
 [node name="piso2" type="StaticBody2D" parent="." unique_id=521207212]
 
 [node name="Sprite2D" type="Sprite2D" parent="piso2" unique_id=778318803]
-position = Vector2(1808, 752.5)
-scale = Vector2(0.7382813, 1.0986328)
+position = Vector2(1827, 752.5)
+scale = Vector2(0.7135417, 1.0986328)
 texture = ExtResource("7_aga2y")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="piso2" unique_id=1099767168]
-position = Vector2(1807.25, 729)
+position = Vector2(1825.25, 729)
 shape = SubResource("RectangleShape2D_gwvgh")
 
 [node name="piso3" type="StaticBody2D" parent="." unique_id=508749024]
@@ -211,34 +211,34 @@ position = Vector2(8593, 625)
 position = Vector2(8562, 596)
 
 [node name="Cuartel2" parent="." unique_id=1597002275 instance=ExtResource("6_gnqo2")]
-position = Vector2(9138, 625)
+position = Vector2(9129, 633)
 
 [node name="EdificioBajo7" parent="." unique_id=1317257235 instance=ExtResource("6_0pjdr")]
 position = Vector2(8680, 584)
 
-[node name="TorreAlta5" parent="." unique_id=935713527 instance=ExtResource("9_vwgcu")]
-position = Vector2(9360, 625)
-
 [node name="Posada3" parent="." unique_id=536972486 instance=ExtResource("16_0qj6g")]
 position = Vector2(9370, 623)
+
+[node name="TorreAlta5" parent="." unique_id=935713527 instance=ExtResource("9_vwgcu")]
+position = Vector2(9398, 626)
 
 [node name="TorreAlta6" parent="." unique_id=1237410050 instance=ExtResource("9_vwgcu")]
 position = Vector2(9822, 628)
 
 [node name="EdificioBajo8" parent="." unique_id=8044512 instance=ExtResource("6_0pjdr")]
-position = Vector2(9899, 587)
+position = Vector2(9898, 588)
 
 [node name="EdificioMedio6" parent="." unique_id=163274011 instance=ExtResource("6_hrsa5")]
-position = Vector2(10076, 569)
+position = Vector2(10075, 571)
 
 [node name="Taberna3" parent="." unique_id=619284427 instance=ExtResource("14_qm6nr")]
 position = Vector2(10488, 626)
 
 [node name="Cuartel3" parent="." unique_id=1330078896 instance=ExtResource("6_gnqo2")]
-position = Vector2(10846, 627)
+position = Vector2(10846, 630)
 
 [node name="EdificioMedio7" parent="." unique_id=1991303631 instance=ExtResource("6_hrsa5")]
-position = Vector2(11371, 561)
+position = Vector2(11371, 565)
 
 [node name="itemArmor" parent="." unique_id=906148642 instance=ExtResource("1_67o6f")]
 position = Vector2(1712, 491)
@@ -247,7 +247,7 @@ position = Vector2(1712, 491)
 position = Vector2(469, 508)
 
 [node name="ItemMoneda" parent="." unique_id=1804587596 instance=ExtResource("19_cokvo")]
-position = Vector2(960, 632)
+position = Vector2(845, 540)
 
 [node name="ItemMoneda4" parent="." unique_id=470141538 instance=ExtResource("19_cokvo")]
 position = Vector2(1985, 373)
@@ -276,7 +276,7 @@ position = Vector2(8429.5, 41.75)
 shape = SubResource("RectangleShape2D_cokvo")
 
 [node name="malillo" parent="." unique_id=1275816925 instance=ExtResource("22_ojgse")]
-position = Vector2(901, 627)
+position = Vector2(819, 628)
 collision_layer = 1
 
 [node name="ItemSalto" parent="." unique_id=914731822 instance=ExtResource("26_yr8f8")]
@@ -356,7 +356,7 @@ offset_bottom = 126.0
 text = "80 monedas"
 
 [node name="ItemMoneda5" parent="." unique_id=1526124916 instance=ExtResource("19_cokvo")]
-position = Vector2(1013, 465)
+position = Vector2(867, 459)
 tipo_actual = 1
 
 [node name="guardia" parent="." unique_id=1359199832 instance=ExtResource("22_guardia")]
@@ -391,7 +391,7 @@ position = Vector2(3083, 622)
 tipo_actual = 1
 
 [node name="ItemMoneda11" parent="." unique_id=1688234502 instance=ExtResource("19_cokvo")]
-position = Vector2(3727, 334)
+position = Vector2(3597, 372)
 tipo_actual = 2
 
 [node name="guardia4" parent="." unique_id=955505031 instance=ExtResource("22_guardia")]
@@ -430,7 +430,7 @@ tipo_actual = 2
 position = Vector2(5508, 546)
 
 [node name="ItemMoneda14" parent="." unique_id=1428469317 instance=ExtResource("19_cokvo")]
-position = Vector2(6117, 359)
+position = Vector2(6152, 355)
 tipo_actual = 1
 
 [node name="guardia8" parent="." unique_id=204314229 instance=ExtResource("22_guardia")]
@@ -442,14 +442,8 @@ position = Vector2(5838, 604)
 [node name="ItemMoneda15" parent="." unique_id=138036253 instance=ExtResource("19_cokvo")]
 position = Vector2(5954, 608)
 
-[node name="guardia10" parent="." unique_id=3943215 instance=ExtResource("22_guardia")]
-position = Vector2(6330, 482)
-
 [node name="lanza" parent="." unique_id=1150916196 instance=ExtResource("29_v2lus")]
 position = Vector2(4673, 557)
-
-[node name="lanza2" parent="." unique_id=1216651650 instance=ExtResource("29_v2lus")]
-position = Vector2(5066, 495)
 
 [node name="ItemMoneda16" parent="." unique_id=768675379 instance=ExtResource("19_cokvo")]
 position = Vector2(6470, 366)
@@ -468,6 +462,7 @@ position = Vector2(7935, 604)
 
 [node name="ItemMoneda18" parent="." unique_id=1072153566 instance=ExtResource("19_cokvo")]
 position = Vector2(8111, 458)
+tipo_actual = 1
 
 [node name="guardia11" parent="." unique_id=1744284168 instance=ExtResource("22_guardia")]
 position = Vector2(8418, 532)
@@ -476,17 +471,14 @@ position = Vector2(8418, 532)
 position = Vector2(8687, 602)
 
 [node name="malillo6" parent="." unique_id=1404075452 instance=ExtResource("22_ojgse")]
-position = Vector2(9585, 518)
+position = Vector2(9542, 538)
 
 [node name="ItemMoneda19" parent="." unique_id=1357085209 instance=ExtResource("19_cokvo")]
 position = Vector2(9745, 358)
 tipo_actual = 2
 
-[node name="guardia12" parent="." unique_id=214388522 instance=ExtResource("22_guardia")]
-position = Vector2(9438, 537)
-
 [node name="guardia13" parent="." unique_id=1026117693 instance=ExtResource("22_guardia")]
-position = Vector2(9538, 605)
+position = Vector2(9530, 604)
 
 [node name="lanza3" parent="." unique_id=1965638578 instance=ExtResource("29_v2lus")]
 position = Vector2(8495, 536)
@@ -501,7 +493,7 @@ position = Vector2(9674, 608)
 position = Vector2(10080, 542)
 
 [node name="guardia14" parent="." unique_id=258545252 instance=ExtResource("22_guardia")]
-position = Vector2(10002, 541)
+position = Vector2(9935, 541)
 
 [node name="ItemMoneda21" parent="." unique_id=964224962 instance=ExtResource("19_cokvo")]
 position = Vector2(10320, 600)
@@ -526,8 +518,8 @@ position = Vector2(10792, 472)
 position = Vector2(2700, 552)
 
 [node name="ItemMoneda2" parent="." unique_id=1153754940 instance=ExtResource("19_cokvo")]
-position = Vector2(7302, 335)
-tipo_actual = 1
+position = Vector2(7283, 358)
+tipo_actual = 2
 
 [node name="arquero5" parent="." unique_id=1443596609 instance=ExtResource("28_sbbnf")]
 position = Vector2(12886, 513)
@@ -570,3 +562,9 @@ position = Vector2(14961, 586)
 [node name="ItemMoneda24" parent="." unique_id=1038895165 instance=ExtResource("19_cokvo")]
 position = Vector2(15741, 345)
 tipo_actual = 2
+
+[node name="itemLanza6" parent="." unique_id=302165373 instance=ExtResource("1_0pjdr")]
+position = Vector2(5047, 499)
+
+[node name="itemArmor4" parent="." unique_id=1646478035 instance=ExtResource("1_67o6f")]
+position = Vector2(6064, 540)
