@@ -8,6 +8,9 @@ size = Vector2(99, 7)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cu46m"]
 size = Vector2(142, 7)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_16f5y"]
+size = Vector2(70, 6)
+
 [node name="TorreJungla" type="StaticBody2D" unique_id=2012515869]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1727932788]
@@ -23,4 +26,9 @@ one_way_collision = true
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=413262825]
 position = Vector2(1, 54.5)
 shape = SubResource("RectangleShape2D_cu46m")
+one_way_collision = true
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="." unique_id=1124606855]
+position = Vector2(1, -211)
+shape = SubResource("RectangleShape2D_16f5y")
 one_way_collision = true

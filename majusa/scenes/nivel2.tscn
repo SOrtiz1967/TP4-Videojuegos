@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://cpy8farn4pnmt"]
+[gd_scene format=3 uid="uid://dq8ufk35j4xy"]
 
 [ext_resource type="Texture2D" uid="uid://dkeub0ou35i48" path="res://assets/fondo/fondo_jungla.png" id="1_o066t"]
 [ext_resource type="Texture2D" uid="uid://bj5a2o5ypte1g" path="res://icon.svg" id="2_5uo66"]
@@ -14,16 +14,22 @@
 [ext_resource type="PackedScene" uid="uid://dapyqp5vtfoh8" path="res://scenes/mapa/estructuras/jungla/palacio_jungla.tscn" id="12_puna5"]
 [ext_resource type="PackedScene" uid="uid://ci8fy8qpsfdqx" path="res://scenes/mapa/estructuras/jungla/templo_jungla.tscn" id="13_omw2a"]
 [ext_resource type="PackedScene" uid="uid://bkcoaw6ar6t8n" path="res://scenes/jugador.tscn" id="14_8tsa1"]
-[ext_resource type="PackedScene" uid="uid://bj84c8fnjdd3s" path="res://scenes/embestidor.tscn" id="15_embest"]
-[ext_resource type="PackedScene" path="res://scenes/malillo.tscn" id="16_malillo"]
-[ext_resource type="PackedScene" uid="uid://cgckdyp5l6mk1" path="res://scenes/arquero.tscn" id="17_arquero"]
 [ext_resource type="Script" uid="uid://dejbmhxrhsilg" path="res://scripts/muerte.gd" id="15_5uo66"]
+[ext_resource type="PackedScene" uid="uid://bj84c8fnjdd3s" path="res://scenes/embestidor.tscn" id="15_embest"]
+[ext_resource type="PackedScene" uid="uid://5wwm1110u7on" path="res://scenes/malillo.tscn" id="16_malillo"]
+[ext_resource type="PackedScene" uid="uid://cgckdyp5l6mk1" path="res://scenes/arquero.tscn" id="17_arquero"]
+[ext_resource type="PackedScene" uid="uid://l21ckdjcis7e" path="res://scenes/item_lanza.tscn" id="19_2xgxk"]
+[ext_resource type="PackedScene" uid="uid://k7nin8y0a02m" path="res://scenes/item_moneda.tscn" id="20_yl4lc"]
+[ext_resource type="PackedScene" uid="uid://cjp445hwo64di" path="res://scenes/guardia.tscn" id="21_ddq8v"]
+[ext_resource type="PackedScene" uid="uid://dgb7r0grccc7k" path="res://scenes/item_armor.tscn" id="22_puna5"]
+[ext_resource type="PackedScene" uid="uid://dtoesw6shets" path="res://scenes/item_salto.tscn" id="23_yl4lc"]
+[ext_resource type="PackedScene" uid="uid://cxwuwv6xfqfag" path="res://scenes/meta.tscn" id="25_puna5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o5303"]
 size = Vector2(630, 77)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u7odm"]
-size = Vector2(1553, 74)
+size = Vector2(1588, 74)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_82kps"]
 size = Vector2(2415, 80)
@@ -32,7 +38,7 @@ size = Vector2(2415, 80)
 size = Vector2(3104, 90)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lc7oj"]
-size = Vector2(5879.5, 121)
+size = Vector2(5378, 121)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8xhro"]
 size = Vector2(17031.25, 93)
@@ -40,18 +46,18 @@ size = Vector2(17031.25, 93)
 [node name="Nivel2" type="Area2D" unique_id=929041879]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=932841413]
-position = Vector2(1862.5, 343.5)
-scale = Vector2(2.4425027, 0.79932356)
+position = Vector2(1624.5, 70.999985)
+scale = Vector2(2.7108228, 1.8985343)
 texture = ExtResource("1_o066t")
 
 [node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1418358693]
-position = Vector2(7049.9326, 343.49997)
-scale = Vector2(3.4057865, 0.79932356)
+position = Vector2(7050, 314.50003)
+scale = Vector2(3.4058623, 1.3652763)
 texture = ExtResource("1_o066t")
 
 [node name="Sprite2D3" type="Sprite2D" parent="." unique_id=1275509063]
-position = Vector2(12178.5, 340.75)
-scale = Vector2(2.3759866, 0.80552423)
+position = Vector2(12178.5, 324.99997)
+scale = Vector2(2.3759866, 1.3912061)
 texture = ExtResource("1_o066t")
 
 [node name="piso1" type="StaticBody2D" parent="." unique_id=1231447245]
@@ -68,12 +74,12 @@ shape = SubResource("RectangleShape2D_o5303")
 [node name="piso2" type="StaticBody2D" parent="." unique_id=447771121]
 
 [node name="Sprite2D" type="Sprite2D" parent="piso2" unique_id=1625075895]
-position = Vector2(1450.5, 614.5)
-scale = Vector2(12.1484375, 0.64843744)
+position = Vector2(1468.0001, 614.5)
+scale = Vector2(12.421876, 0.64843744)
 texture = ExtResource("2_5uo66")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="piso2" unique_id=593149427]
-position = Vector2(1452.5, 614)
+position = Vector2(1470, 614)
 shape = SubResource("RectangleShape2D_u7odm")
 
 [node name="piso4" type="StaticBody2D" parent="." unique_id=322028836]
@@ -101,12 +107,12 @@ shape = SubResource("RectangleShape2D_34i1w")
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1791617404]
 
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D" unique_id=1222642424]
-position = Vector2(11353.75, 604)
-scale = Vector2(45.675774, 1)
+position = Vector2(11087.5, 604)
+scale = Vector2(42.03906, 1)
 texture = ExtResource("2_5uo66")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1022956174]
-position = Vector2(11370, 611)
+position = Vector2(11087, 611)
 shape = SubResource("RectangleShape2D_lc7oj")
 
 [node name="ArbolJungla" parent="." unique_id=2032391913 instance=ExtResource("3_8xhro")]
@@ -116,7 +122,7 @@ position = Vector2(1456, 458)
 position = Vector2(1470, 554)
 
 [node name="CasaPlataforma" parent="." unique_id=408637709 instance=ExtResource("5_gjjf1")]
-position = Vector2(2130, 507)
+position = Vector2(2161, 506)
 
 [node name="Cuartel" parent="." unique_id=1798515538 instance=ExtResource("6_cxqha")]
 position = Vector2(1793, 491)
@@ -125,7 +131,7 @@ position = Vector2(1793, 491)
 position = Vector2(2806, 519)
 
 [node name="EdificioMedioJungla" parent="." unique_id=578395392 instance=ExtResource("8_4bhft")]
-position = Vector2(2962, 503)
+position = Vector2(2962, 504)
 
 [node name="PlataformaArbol" parent="." unique_id=2037191727 instance=ExtResource("9_2xgxk")]
 position = Vector2(5023, 489)
@@ -143,7 +149,7 @@ position = Vector2(3220, 544)
 position = Vector2(3781, 496)
 
 [node name="EdificioBajo2" parent="." unique_id=347189457 instance=ExtResource("7_q3mfh")]
-position = Vector2(4323, 523)
+position = Vector2(4323, 522)
 
 [node name="EdificioMedioJungla2" parent="." unique_id=342476864 instance=ExtResource("8_4bhft")]
 position = Vector2(4159, 507)
@@ -193,22 +199,17 @@ position = Vector2(7320, 503)
 [node name="Barrera4" parent="." unique_id=958193174 instance=ExtResource("4_roi11")]
 position = Vector2(7605, 542)
 
-[node name="jugador" parent="." unique_id=1882298558 instance=ExtResource("14_8tsa1")]
-position = Vector2(48, 554)
-velocidad_acelerada = 50.0
-
 [node name="Embestidor1" parent="." unique_id=1327742710 instance=ExtResource("15_embest")]
 position = Vector2(6695, 543)
 
 [node name="Embestidor2" parent="." unique_id=290002070 instance=ExtResource("15_embest")]
-position = Vector2(3972, 524)
+position = Vector2(3943, 545)
 
 [node name="malillo" parent="." unique_id=186656782 instance=ExtResource("16_malillo")]
 position = Vector2(6110, 552)
 
 [node name="Arquero" parent="." unique_id=626762104 instance=ExtResource("17_arquero")]
 position = Vector2(1916, 557)
-mira_derecha = false
 
 [node name="muerte" type="Area2D" parent="." unique_id=323002474]
 position = Vector2(-1, 844)
@@ -218,3 +219,339 @@ script = ExtResource("15_5uo66")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="muerte" unique_id=2039745501]
 position = Vector2(8318, -146)
 shape = SubResource("RectangleShape2D_8xhro")
+
+[node name="Barrera5" parent="." unique_id=324349098 instance=ExtResource("4_roi11")]
+position = Vector2(251, 549)
+
+[node name="EdificioBajo7" parent="." unique_id=587094194 instance=ExtResource("7_q3mfh")]
+position = Vector2(434, 521)
+
+[node name="itemLanza" parent="." unique_id=906148642 instance=ExtResource("19_2xgxk")]
+position = Vector2(792, 494)
+
+[node name="ItemMoneda" parent="." unique_id=1804587596 instance=ExtResource("20_yl4lc")]
+position = Vector2(705, 559)
+
+[node name="ItemMoneda2" parent="." unique_id=1897399890 instance=ExtResource("20_yl4lc")]
+position = Vector2(1230, 438)
+tipo_actual = 2
+
+[node name="embestidor" parent="." unique_id=1290149950 instance=ExtResource("15_embest")]
+position = Vector2(1218, 550)
+
+[node name="guardia" parent="." unique_id=1359199832 instance=ExtResource("21_ddq8v")]
+position = Vector2(1164, 435)
+
+[node name="ItemMoneda3" parent="." unique_id=2054015085 instance=ExtResource("20_yl4lc")]
+position = Vector2(1456, 438)
+
+[node name="guardia3" parent="." unique_id=14055820 instance=ExtResource("21_ddq8v")]
+position = Vector2(2669, 550)
+
+[node name="itemArmor" parent="." unique_id=1571167516 instance=ExtResource("22_puna5")]
+position = Vector2(2083, 319)
+
+[node name="malillo2" parent="." unique_id=1275816925 instance=ExtResource("16_malillo")]
+position = Vector2(2208, 316)
+
+[node name="ItemMoneda4" parent="." unique_id=2077305054 instance=ExtResource("20_yl4lc")]
+position = Vector2(2241, 196)
+tipo_actual = 2
+
+[node name="ItemMoneda5" parent="." unique_id=1041084578 instance=ExtResource("20_yl4lc")]
+position = Vector2(2483, 283)
+tipo_actual = 2
+
+[node name="embestidor2" parent="." unique_id=2020590645 instance=ExtResource("15_embest")]
+position = Vector2(1760, 458)
+
+[node name="guardia2" parent="." unique_id=2013337478 instance=ExtResource("21_ddq8v")]
+position = Vector2(1943, 407)
+
+[node name="ItemSalto" parent="." unique_id=914731822 instance=ExtResource("23_yl4lc")]
+position = Vector2(1508, 436)
+
+[node name="ItemMoneda6" parent="." unique_id=299741899 instance=ExtResource("20_yl4lc")]
+position = Vector2(2857, 484)
+tipo_actual = 1
+
+[node name="malillo3" parent="." unique_id=1920772068 instance=ExtResource("16_malillo")]
+position = Vector2(2930, 426)
+
+[node name="ItemMoneda7" parent="." unique_id=1767378920 instance=ExtResource("20_yl4lc")]
+position = Vector2(3387, 234)
+tipo_actual = 2
+
+[node name="embestidor3" parent="." unique_id=2030594703 instance=ExtResource("15_embest")]
+position = Vector2(3387, 486)
+
+[node name="ItemMoneda8" parent="." unique_id=223535100 instance=ExtResource("20_yl4lc")]
+position = Vector2(3387, 546)
+tipo_actual = 1
+
+[node name="ItemMoneda9" parent="." unique_id=1715086279 instance=ExtResource("20_yl4lc")]
+position = Vector2(3063, 326)
+tipo_actual = 1
+
+[node name="guardia4" parent="." unique_id=1838054329 instance=ExtResource("21_ddq8v")]
+position = Vector2(3745, 405)
+
+[node name="ItemSalto2" parent="." unique_id=1551098514 instance=ExtResource("23_yl4lc")]
+position = Vector2(3890, 409)
+
+[node name="itemArmor2" parent="." unique_id=1501760889 instance=ExtResource("22_puna5")]
+position = Vector2(3710, 545)
+
+[node name="ItemMoneda10" parent="." unique_id=1868500513 instance=ExtResource("20_yl4lc")]
+position = Vector2(4201, 433)
+
+[node name="embestidor4" parent="." unique_id=1778140103 instance=ExtResource("15_embest")]
+position = Vector2(4501, 549)
+
+[node name="ItemMoneda11" parent="." unique_id=995835873 instance=ExtResource("20_yl4lc")]
+position = Vector2(5018, 460)
+tipo_actual = 1
+
+[node name="arquero" parent="." unique_id=1981587964 instance=ExtResource("17_arquero")]
+position = Vector2(6007, 545)
+
+[node name="malillo4" parent="." unique_id=577892557 instance=ExtResource("16_malillo")]
+position = Vector2(5396, 429)
+
+[node name="ItemMoneda12" parent="." unique_id=490488267 instance=ExtResource("20_yl4lc")]
+position = Vector2(5647, 270)
+tipo_actual = 1
+
+[node name="ItemMoneda13" parent="." unique_id=221006058 instance=ExtResource("20_yl4lc")]
+position = Vector2(6029, 325)
+tipo_actual = 1
+
+[node name="guardia5" parent="." unique_id=859757588 instance=ExtResource("21_ddq8v")]
+position = Vector2(5796, 401)
+
+[node name="guardia6" parent="." unique_id=1240712452 instance=ExtResource("21_ddq8v")]
+position = Vector2(6392, 317)
+
+[node name="malillo5" parent="." unique_id=418641160 instance=ExtResource("16_malillo")]
+position = Vector2(6911, 273)
+
+[node name="malillo6" parent="." unique_id=1366423372 instance=ExtResource("16_malillo")]
+position = Vector2(6618, 474)
+
+[node name="ItemMoneda14" parent="." unique_id=1321347618 instance=ExtResource("20_yl4lc")]
+position = Vector2(6972, 86)
+tipo_actual = 2
+
+[node name="guardia7" parent="." unique_id=720876367 instance=ExtResource("21_ddq8v")]
+position = Vector2(7262, 415)
+
+[node name="arquero2" parent="." unique_id=744155453 instance=ExtResource("17_arquero")]
+position = Vector2(8624, 535)
+
+[node name="EdificioMedioJungla6" parent="." unique_id=224586957 instance=ExtResource("8_4bhft")]
+position = Vector2(8740, 484)
+
+[node name="EdificioBajo8" parent="." unique_id=1705218176 instance=ExtResource("7_q3mfh")]
+position = Vector2(8902, 499)
+
+[node name="EdficioAltoJungla4" parent="." unique_id=511484309 instance=ExtResource("10_yl4lc")]
+position = Vector2(9056, 408)
+
+[node name="TorreJungla2" parent="." unique_id=1271152930 instance=ExtResource("11_ddq8v")]
+position = Vector2(9399, 441)
+
+[node name="Cuartel2" parent="." unique_id=1136493851 instance=ExtResource("6_cxqha")]
+position = Vector2(9720, 466)
+
+[node name="Barrera6" parent="." unique_id=1655526401 instance=ExtResource("4_roi11")]
+position = Vector2(9547, 527)
+
+[node name="ArbolJungla3" parent="." unique_id=527964346 instance=ExtResource("3_8xhro")]
+position = Vector2(10072, 436)
+
+[node name="PlataformaArbol2" parent="." unique_id=109136891 instance=ExtResource("9_2xgxk")]
+position = Vector2(10793, 472)
+
+[node name="ArbolJungla4" parent="." unique_id=1549536105 instance=ExtResource("3_8xhro")]
+position = Vector2(10221, 436)
+
+[node name="EdificioBajo9" parent="." unique_id=841269364 instance=ExtResource("7_q3mfh")]
+position = Vector2(10400, 500)
+
+[node name="meta" parent="." unique_id=668783768 instance=ExtResource("25_puna5")]
+position = Vector2(13857, 482)
+
+[node name="EdificioMedioJungla7" parent="." unique_id=521114779 instance=ExtResource("8_4bhft")]
+position = Vector2(11103, 485)
+
+[node name="EdificioBajo10" parent="." unique_id=315924592 instance=ExtResource("7_q3mfh")]
+position = Vector2(11264, 500)
+
+[node name="Barrera7" parent="." unique_id=133903502 instance=ExtResource("4_roi11")]
+position = Vector2(11383, 526)
+
+[node name="arquero3" parent="." unique_id=456565425 instance=ExtResource("17_arquero")]
+position = Vector2(11329, 528)
+
+[node name="TorreJungla3" parent="." unique_id=140561895 instance=ExtResource("11_ddq8v")]
+position = Vector2(11558, 440)
+
+[node name="malillo7" parent="." unique_id=1409401247 instance=ExtResource("16_malillo")]
+position = Vector2(11317, 461)
+
+[node name="PalacioJungla3" parent="." unique_id=924129764 instance=ExtResource("12_puna5")]
+position = Vector2(11773, 475)
+
+[node name="Barrera8" parent="." unique_id=949847974 instance=ExtResource("4_roi11")]
+position = Vector2(12060, 527)
+
+[node name="TemploJungla2" parent="." unique_id=1279056695 instance=ExtResource("13_omw2a")]
+position = Vector2(12336, 342)
+
+[node name="Cuartel3" parent="." unique_id=1377131876 instance=ExtResource("6_cxqha")]
+position = Vector2(12708, 470)
+
+[node name="TemploJungla3" parent="." unique_id=1082493083 instance=ExtResource("13_omw2a")]
+position = Vector2(13068, 343)
+
+[node name="arquero4" parent="." unique_id=140885402 instance=ExtResource("17_arquero")]
+position = Vector2(13742, 519)
+
+[node name="EdficioAltoJungla5" parent="." unique_id=1309052080 instance=ExtResource("10_yl4lc")]
+position = Vector2(13362, 412)
+
+[node name="embestidor5" parent="." unique_id=173299428 instance=ExtResource("15_embest")]
+position = Vector2(13327, 535)
+
+[node name="embestidor6" parent="." unique_id=1567965486 instance=ExtResource("15_embest")]
+position = Vector2(12347, 420)
+
+[node name="guardia8" parent="." unique_id=601370689 instance=ExtResource("21_ddq8v")]
+position = Vector2(12679, 383)
+
+[node name="itemLanza2" parent="." unique_id=1831934370 instance=ExtResource("19_2xgxk")]
+position = Vector2(4184, 556)
+
+[node name="itemLanza3" parent="." unique_id=92222015 instance=ExtResource("19_2xgxk")]
+position = Vector2(4705, 475)
+
+[node name="itemArmor3" parent="." unique_id=1492507510 instance=ExtResource("22_puna5")]
+position = Vector2(3386, 283)
+
+[node name="embestidor7" parent="." unique_id=86405059 instance=ExtResource("15_embest")]
+position = Vector2(5269, 547)
+
+[node name="guardia9" parent="." unique_id=89877691 instance=ExtResource("21_ddq8v")]
+position = Vector2(5615, 327)
+
+[node name="arquero6" parent="." unique_id=1209820698 instance=ExtResource("17_arquero")]
+position = Vector2(6073, 265)
+
+[node name="itemLanza4" parent="." unique_id=1212018382 instance=ExtResource("19_2xgxk")]
+position = Vector2(5308, 431)
+
+[node name="ItemMoneda15" parent="." unique_id=1597541422 instance=ExtResource("20_yl4lc")]
+position = Vector2(6790, 450)
+
+[node name="ItemMoneda16" parent="." unique_id=541322152 instance=ExtResource("20_yl4lc")]
+position = Vector2(6920, 360)
+tipo_actual = 1
+
+[node name="guardia10" parent="." unique_id=606640561 instance=ExtResource("21_ddq8v")]
+position = Vector2(7467, 477)
+
+[node name="ItemMoneda17" parent="." unique_id=1019517513 instance=ExtResource("20_yl4lc")]
+position = Vector2(8693, 410)
+
+[node name="ItemMoneda18" parent="." unique_id=1909787270 instance=ExtResource("20_yl4lc")]
+position = Vector2(8919, 467)
+
+[node name="embestidor8" parent="." unique_id=1425624957 instance=ExtResource("15_embest")]
+position = Vector2(9202, 529)
+
+[node name="guardia11" parent="." unique_id=1731953108 instance=ExtResource("21_ddq8v")]
+position = Vector2(9111, 247)
+
+[node name="itemArmor4" parent="." unique_id=1952295278 instance=ExtResource("22_puna5")]
+position = Vector2(8047, 544)
+
+[node name="ItemMoneda19" parent="." unique_id=1354758960 instance=ExtResource("20_yl4lc")]
+position = Vector2(9401, 214)
+tipo_actual = 2
+
+[node name="itemLanza5" parent="." unique_id=1633296968 instance=ExtResource("19_2xgxk")]
+position = Vector2(7779, 536)
+
+[node name="embestidor9" parent="." unique_id=1234735372 instance=ExtResource("15_embest")]
+position = Vector2(9753, 373)
+
+[node name="embestidor10" parent="." unique_id=1393003110 instance=ExtResource("15_embest")]
+position = Vector2(9846, 525)
+
+[node name="ItemMoneda20" parent="." unique_id=1295005033 instance=ExtResource("20_yl4lc")]
+position = Vector2(10149, 414)
+tipo_actual = 1
+
+[node name="arquero7" parent="." unique_id=183569306 instance=ExtResource("17_arquero")]
+position = Vector2(10572, 530)
+
+[node name="guardia12" parent="." unique_id=298033108 instance=ExtResource("21_ddq8v")]
+position = Vector2(10740, 450)
+
+[node name="ItemMoneda21" parent="." unique_id=899620524 instance=ExtResource("20_yl4lc")]
+position = Vector2(10977, 535)
+
+[node name="ItemMoneda22" parent="." unique_id=1395090564 instance=ExtResource("20_yl4lc")]
+position = Vector2(11561, 202)
+tipo_actual = 2
+
+[node name="guardia13" parent="." unique_id=640541299 instance=ExtResource("21_ddq8v")]
+position = Vector2(11071, 407)
+
+[node name="embestidor11" parent="." unique_id=696774693 instance=ExtResource("15_embest")]
+position = Vector2(11620, 533)
+
+[node name="embestidor12" parent="." unique_id=161808645 instance=ExtResource("15_embest")]
+position = Vector2(11872, 530)
+
+[node name="guardia14" parent="." unique_id=2038789487 instance=ExtResource("21_ddq8v")]
+position = Vector2(11885, 386)
+
+[node name="arquero8" parent="." unique_id=421845188 instance=ExtResource("17_arquero")]
+position = Vector2(12720, 533)
+
+[node name="itemLanza6" parent="." unique_id=37772402 instance=ExtResource("19_2xgxk")]
+position = Vector2(11762, 393)
+
+[node name="ItemMoneda23" parent="." unique_id=1741986789 instance=ExtResource("20_yl4lc")]
+position = Vector2(12347, 254)
+tipo_actual = 1
+
+[node name="itemArmor5" parent="." unique_id=1766113020 instance=ExtResource("22_puna5")]
+position = Vector2(12564, 388)
+
+[node name="ItemMoneda24" parent="." unique_id=301822940 instance=ExtResource("20_yl4lc")]
+position = Vector2(13366, 308)
+tipo_actual = 2
+
+[node name="itemLanza7" parent="." unique_id=1245760072 instance=ExtResource("19_2xgxk")]
+position = Vector2(2768, 483)
+
+[node name="Barrera9" parent="." unique_id=857982539 instance=ExtResource("4_roi11")]
+position = Vector2(5577, 259)
+
+[node name="guardia15" parent="." unique_id=1671232261 instance=ExtResource("21_ddq8v")]
+position = Vector2(13079, 258)
+
+[node name="embestidor13" parent="." unique_id=1157772638 instance=ExtResource("15_embest")]
+position = Vector2(13072, 373)
+
+[node name="embestidor14" parent="." unique_id=516250914 instance=ExtResource("15_embest")]
+position = Vector2(13324, 301)
+
+[node name="guardia16" parent="." unique_id=84277928 instance=ExtResource("21_ddq8v")]
+position = Vector2(13367, 250)
+
+[node name="jugador" parent="." unique_id=1882298558 instance=ExtResource("14_8tsa1")]
+position = Vector2(48, 554)
+velocidad_acelerada = 50.0

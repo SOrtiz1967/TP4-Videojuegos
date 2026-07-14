@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://cn6sc2qe5horb" path="res://assets/fondo/estructuras/jungla/barrera.png" id="1_lbpp8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ff7rw"]
-size = Vector2(64, 71)
+size = Vector2(73, 71)
 
 [node name="Barrera" type="StaticBody2D" unique_id=1023978294]
 
@@ -13,5 +13,5 @@ scale = Vector2(0.07063802, 0.10986328)
 texture = ExtResource("1_lbpp8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=647405107]
-position = Vector2(5, 3.5)
+position = Vector2(0.5, 3.5)
 shape = SubResource("RectangleShape2D_ff7rw")
