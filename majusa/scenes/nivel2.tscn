@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dq8ufk35j4xy"]
 
 [ext_resource type="Texture2D" uid="uid://dkeub0ou35i48" path="res://assets/fondo/fondo_jungla.png" id="1_o066t"]
-[ext_resource type="Texture2D" uid="uid://bj5a2o5ypte1g" path="res://icon.svg" id="2_5uo66"]
+[ext_resource type="Texture2D" uid="uid://bb563hn6eoko7" path="res://assets/fondo/piso_nivel2.png" id="2_puna5"]
 [ext_resource type="PackedScene" uid="uid://nar142cqteiu" path="res://scenes/mapa/estructuras/jungla/arbol_jungla.tscn" id="3_8xhro"]
 [ext_resource type="PackedScene" uid="uid://dn467bbqr1qcr" path="res://scenes/mapa/estructuras/jungla/barrera.tscn" id="4_roi11"]
 [ext_resource type="PackedScene" uid="uid://bptcwtyxjiqkk" path="res://scenes/mapa/estructuras/jungla/casa_plataforma.tscn" id="5_gjjf1"]
@@ -63,9 +63,9 @@ texture = ExtResource("1_o066t")
 [node name="piso1" type="StaticBody2D" parent="." unique_id=1231447245]
 
 [node name="Sprite2D" type="Sprite2D" parent="piso1" unique_id=1317482114]
-position = Vector2(269, 613.5)
-scale = Vector2(4.921875, 0.61718744)
-texture = ExtResource("2_5uo66")
+position = Vector2(261.99994, 619.5)
+scale = Vector2(0.46354163, 0.5947266)
+texture = ExtResource("2_puna5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="piso1" unique_id=1781232644]
 position = Vector2(268, 611.5)
@@ -74,9 +74,9 @@ shape = SubResource("RectangleShape2D_o5303")
 [node name="piso2" type="StaticBody2D" parent="." unique_id=447771121]
 
 [node name="Sprite2D" type="Sprite2D" parent="piso2" unique_id=1625075895]
-position = Vector2(1468.0001, 614.5)
-scale = Vector2(12.421876, 0.64843744)
-texture = ExtResource("2_5uo66")
+position = Vector2(1468.4374, 621)
+scale = Vector2(1.1582849, 0.55508417)
+texture = ExtResource("2_puna5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="piso2" unique_id=593149427]
 position = Vector2(1470, 614)
@@ -85,9 +85,9 @@ shape = SubResource("RectangleShape2D_u7odm")
 [node name="piso4" type="StaticBody2D" parent="." unique_id=322028836]
 
 [node name="Sprite2D" type="Sprite2D" parent="piso4" unique_id=82381521]
-position = Vector2(3735, 609)
-scale = Vector2(18.671873, 0.640625)
-texture = ExtResource("2_5uo66")
+position = Vector2(3741, 615)
+scale = Vector2(1.7478837, 0.625)
+texture = ExtResource("2_puna5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="piso4" unique_id=1103106590]
 position = Vector2(3746.5, 610)
@@ -96,22 +96,22 @@ shape = SubResource("RectangleShape2D_82kps")
 [node name="piso5" type="StaticBody2D" parent="." unique_id=1826145675]
 
 [node name="Sprite2D" type="Sprite2D" parent="piso5" unique_id=1156552798]
-position = Vector2(6641, 613)
-scale = Vector2(24.125002, 0.6875)
-texture = ExtResource("2_5uo66")
+position = Vector2(6626.5005, 611)
+scale = Vector2(2.2441401, 0.6464844)
+texture = ExtResource("2_puna5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="piso5" unique_id=1586777153]
 position = Vector2(6638, 612)
 shape = SubResource("RectangleShape2D_34i1w")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1791617404]
+[node name="piso6" type="StaticBody2D" parent="." unique_id=1791617404]
 
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D" unique_id=1222642424]
-position = Vector2(11087.5, 604)
-scale = Vector2(42.03906, 1)
-texture = ExtResource("2_5uo66")
+[node name="Sprite2D" type="Sprite2D" parent="piso6" unique_id=1222642424]
+position = Vector2(11052.001, 613)
+scale = Vector2(3.8834639, 0.8793945)
+texture = ExtResource("2_puna5")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1022956174]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="piso6" unique_id=1022956174]
 position = Vector2(11087, 611)
 shape = SubResource("RectangleShape2D_lc7oj")
 
