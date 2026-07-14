@@ -92,6 +92,10 @@ region = Rect2(900, 0, 150, 150)
 atlas = ExtResource("tex_correr")
 region = Rect2(1050, 0, 150, 150)
 
+[sub_resource type="AtlasTexture" id="AT_saltar_1"]
+atlas = ExtResource("tex_saltar")
+region = Rect2(150, 0, 150, 150)
+
 [sub_resource type="AtlasTexture" id="AT_atacar3_0"]
 atlas = ExtResource("tex_atacar3")
 region = Rect2(0, 0, 150, 150)
@@ -200,10 +204,6 @@ region = Rect2(1050, 0, 150, 150)
 atlas = ExtResource("tex_saltar")
 region = Rect2(0, 0, 150, 150)
 
-[sub_resource type="AtlasTexture" id="AT_saltar_1"]
-atlas = ExtResource("tex_saltar")
-region = Rect2(150, 0, 150, 150)
-
 [sub_resource type="SpriteFrames" id="SF_main"]
 animations = [{
 "frames": [{
@@ -289,6 +289,14 @@ animations = [{
 "frames": [],
 "loop": true,
 "name": &"corrersinlanza",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AT_saltar_1")
+}],
+"loop": true,
+"name": &"deslizar",
 "speed": 5.0
 }, {
 "frames": [{
@@ -418,7 +426,7 @@ friccion = 660.0
 position = Vector2(-3, -8.000002)
 scale = Vector2(0.84666663, 0.9800001)
 sprite_frames = SubResource("SF_main")
-animation = &"atacar2"
+animation = &"deslizar"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1086738407]
 position = Vector2(-8.5, -4.5)

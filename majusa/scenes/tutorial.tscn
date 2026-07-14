@@ -335,7 +335,7 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 10
 theme_override_font_sizes/font_size = 13
-text = "EMBESTIDOR: TE EMBISTE"
+text = "EMBESTIDOR: TE PERSIGUE HASTA LA MUERTE"
 horizontal_alignment = 1
 autowrap_mode = 2
 
@@ -364,22 +364,22 @@ text = "empuje hacia atras: A  / correr: D "
 horizontal_alignment = 1
 
 [node name="lblPortal" type="Label" parent="." unique_id=851132046]
-offset_left = 4138.0
-offset_top = 439.0
-offset_right = 4578.0
-offset_bottom = 484.0
+offset_left = 4023.0
+offset_top = 457.0
+offset_right = 4659.0
+offset_bottom = 594.0
 theme_override_colors/font_color = Color(0.5, 0.8, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 10
 theme_override_font_sizes/font_size = 30
-text = "ENTRÁ AL PORTAL"
+text = "JUNTA MONEDAS PARA ACTIVAR EL PORTAL!"
 horizontal_alignment = 1
 
 [node name="malillo" parent="." unique_id=1275816925 instance=ExtResource("13_0hilk")]
 position = Vector2(2340, 573)
 
 [node name="embestidor" parent="." unique_id=1290149950 instance=ExtResource("14_wr8iv")]
-position = Vector2(3683, 559)
+position = Vector2(3532, 574)
 
 [node name="ItemSalto" parent="." unique_id=914731822 instance=ExtResource("15_wr8iv")]
 position = Vector2(934, 522)

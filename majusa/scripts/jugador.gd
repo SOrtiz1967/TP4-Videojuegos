@@ -16,8 +16,8 @@ var saltos_actuales: int= 0
 @export var fuerza_empujon: float= 400.0
 @export var friccion: float= 900.0
 @export var velocidad_deslizamiento: float= 260.0
-@export var tiempo_deslizamiento: float= 0.25
-@export var factor_altura_deslizamiento: float= 0.55
+@export var tiempo_deslizamiento: float= 0.55
+@export var factor_altura_deslizamiento: float= 0.2
 @export var retraso_golpe: float= 0.15
 
 @onready var animacion= $AnimatedSprite2D
@@ -34,12 +34,14 @@ var vida_actual: int = 1
 var monedas_actuales: int= 0
 var deslizando: bool= false
 var altura_colision_original: float= 0.0
+var pos_colision_original: float= 0.0
 @export var tiempo_cooldown_empuje: float = 0.1
 var puede_empujar: bool = true
 
 func _ready() -> void:
 	add_to_group("jugadores")
 	altura_colision_original= forma_colision.shape.size.y
+	pos_colision_original= forma_colision.position.y
 
 func _physics_process(delta: float) -> void:
 
@@ -126,14 +128,17 @@ func _input(event: InputEvent) -> void:
 
 func deslizarse() -> void:
 	deslizando= true
-	forma_colision.shape.size.y= altura_colision_original * factor_altura_deslizamiento
+	var altura_reducida= altura_colision_original * factor_altura_deslizamiento
+	forma_colision.shape.size.y= altura_reducida
+	forma_colision.position.y= pos_colision_original + (altura_colision_original - altura_reducida) / 2.0
 	if ultima_dir == "derecha":
 		velocity.x= velocidad_deslizamiento
 	else:
 		velocity.x= -velocidad_deslizamiento
-	actualizar_animacion("correr")
+	actualizar_animacion("deslizar")
 	await get_tree().create_timer(tiempo_deslizamiento).timeout
 	forma_colision.shape.size.y= altura_colision_original
+	forma_colision.position.y= pos_colision_original
 	deslizando= false
 
 func equipar_lanza(escena_recibida: PackedScene) -> void:
