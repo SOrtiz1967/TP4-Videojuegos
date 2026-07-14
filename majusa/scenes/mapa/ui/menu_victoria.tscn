@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://p1tn4pxri4sn"]
+
+[ext_resource type="Script" path="res://scripts/menu_victoria.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://drkjyg88flpvy" path="res://assets/fondo/menuPrincipal2boton.png" id="2"]
+
+[node name="menu_victoria" type="CanvasLayer" unique_id=988469362]
+process_mode = 3
+script = ExtResource("1")
+
+[node name="cuadro" type="TextureRect" parent="." unique_id=1008282684]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -320.0
+offset_top = -220.0
+offset_right = 320.0
+offset_bottom = 220.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2")
+expand_mode = 1
+
+[node name="boton_siguiente" type="Button" parent="cuadro" unique_id=1434886112]
+layout_mode = 0
+offset_left = 182.0
+offset_top = 138.0
+offset_right = 458.0
+offset_bottom = 218.0
+theme_override_colors/font_color = Color(0.19607843, 0.14117648, 0.09803922, 1)
+theme_override_font_sizes/font_size = 24
+text = "SIGUIENTE NIVEL"
+flat = true
+
+[node name="boton_menu_principal" type="Button" parent="cuadro" unique_id=1142680961]
+layout_mode = 0
+offset_left = 186.0
+offset_top = 253.0
+offset_right = 462.0
+offset_bottom = 337.0
+theme_override_colors/font_color = Color(0.19607843, 0.14117648, 0.09803922, 1)
+theme_override_font_sizes/font_size = 24
+text = "MENU PRINCIPAL"
+flat = true
+
+[connection signal="pressed" from="cuadro/boton_siguiente" to="." method="_on_siguiente_pressed"]
+[connection signal="pressed" from="cuadro/boton_menu_principal" to="." method="_on_menu_principal_pressed"]

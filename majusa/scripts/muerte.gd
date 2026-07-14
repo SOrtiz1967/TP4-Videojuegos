@@ -12,5 +12,4 @@ func _process(delta: float) -> void:
 func _on_body_entered(body: Node2D) -> void:
 	if body is JugadorBase:
 		if body.has_method("recibir_daño"):
-			body.recibir_daño(9999) 
-			get_tree().change_scene_to_file("res://scenes/menu_principal.tscn")
+			body.recibir_daño(9999)

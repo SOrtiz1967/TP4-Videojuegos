@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://5wwm1110u7on" path="res://scenes/malillo.tscn" id="13_0hilk"]
 [ext_resource type="PackedScene" uid="uid://bj84c8fnjdd3s" path="res://scenes/embestidor.tscn" id="14_wr8iv"]
 [ext_resource type="PackedScene" uid="uid://dtoesw6shets" path="res://scenes/item_salto.tscn" id="15_wr8iv"]
+[ext_resource type="Script" uid="uid://bqw3nk7t2vxer" path="res://scripts/tutorial.gd" id="16_tut"]
 
 [sub_resource type="RectangleShape2D" id="SH_piso"]
 size = Vector2(4616, 120)
@@ -165,6 +166,7 @@ animations = [{
 }]
 
 [node name="tutorial" type="Node2D" unique_id=44774629]
+script = ExtResource("16_tut")
 
 [node name="fondo" type="Sprite2D" parent="." unique_id=744439440]
 position = Vector2(1428, 299)

@@ -4,6 +4,7 @@ class_name JugadorBase
 signal lanzas_cambiadas(cantidad: int)
 signal monedas_cambiadas(cantidad: int)
 signal vida_cambiada(nueva_vida: int)
+signal murio
 @export var velocidad_acelerada: float= 250.0
 @export var escena_lanza: PackedScene
 
@@ -214,7 +215,7 @@ func recibir_daño(daño_recibido: int) -> void:
 	if vidas <= 0:
 		animacion.play("morir")
 		await animacion.animation_finished
-		get_tree().change_scene_to_file("res://scenes/menu_principal.tscn")
+		murio.emit()
 	else:
 		recibiendo_golpe=true
 		animacion.play("recibir_golpe")
