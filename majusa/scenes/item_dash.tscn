@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://ck6pgnxsx3voq"]
+
+[ext_resource type="Script" uid="uid://dtc33tb3vwfl1" path="res://item_dash.gd" id="1_3wxbd"]
+[ext_resource type="Texture2D" uid="uid://jwdo3m7s5f62" path="res://assets/dash-removebg-preview.png" id="2_3wxbd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3wxbd"]
+size = Vector2(74, 67)
+
+[node name="ItemDash" type="Area2D" unique_id=2146608052]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_3wxbd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1326745940]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_3wxbd")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1016711103]
+position = Vector2(-26, -4)
+scale = Vector2(0.49482244, 0.40311652)
+texture = ExtResource("2_3wxbd")

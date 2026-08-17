@@ -36,8 +36,9 @@ var monedas_actuales: int= 0
 var deslizando: bool= false
 var altura_colision_original: float= 0.0
 var pos_colision_original: float= 0.0
-@export var tiempo_cooldown_empuje: float = 0.1
+@export var tiempo_cooldown_empuje: float = 0.38
 var puede_empujar: bool = true
+var tiene_dash: bool = false
 
 func _ready() -> void:
 	add_to_group("jugadores")
@@ -98,7 +99,7 @@ func _physics_process(delta: float) -> void:
 func _input(event: InputEvent) -> void:
 	if animacion.animation == "morir" or recibiendo_golpe:
 		return
-	if event.is_action_pressed("izquierda") and not atacando and puede_empujar:
+	if event.is_action_pressed("izquierda") and not atacando and puede_empujar and tiene_dash:
 		velocity.x = -fuerza_empujon
 		puede_empujar = false
 		print("recargando empuje...")
@@ -246,3 +247,6 @@ func rebotar_en_enemigo() -> void:
 func habilitar_doble_salto() -> void:
 	max_saltos = 2
 	print("doble salto!")
+	
+func habilitar_dash() -> void:
+	tiene_dash = true
